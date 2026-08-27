@@ -1,0 +1,3026 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vertika Wall Printing</title>
+<meta name="description" content="Professional UV direct-to-wall printing for commercial, residential and branded spaces.">
+
+<style>
+:root {
+  --cyan: #00bfe8;
+  --magenta: #ec008c;
+  --yellow: #ffe600;
+  --black: #0a0a0a;
+  --ink: #111111;
+  --muted: #666666;
+  --line: #dedede;
+  --paper: #ffffff;
+  --soft: #f4f4f2;
+  --soft-2: #ececea;
+  --wrap: 1320px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wrap {
+  width: min(var(--wrap), calc(100% - 64px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+}
+
+.nav-shell {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) auto minmax(200px, 240px);
+  min-height: 168px;
+  align-items: stretch;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.90);
+  backdrop-filter: blur(14px);
+  position: relative;
+  z-index: 10;
+}
+
+.nav-left,
+.nav-center {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left {
+  position: relative;
+  padding-left: max(32px, calc((100vw - var(--wrap)) / 2));
+  z-index: 20;
+  overflow: visible;
+}
+
+.nav-left::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 520px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 58%, rgba(255,255,255,0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.nav-center {
+  justify-content: center;
+  gap: 34px;
+  padding: 0 28px;
+}
+
+.nav-center a {
+  position: relative;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -9px;
+  height: 2px;
+  background: var(--cyan);
+  transition: right .2s ease;
+}
+
+.nav-center a:hover::after {
+  right: 0;
+}
+
+.quote-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 24px 0 36px;
+  white-space: nowrap;
+  color: #fff;
+  background: var(--black);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.quote-nav::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background:
+    linear-gradient(
+      to right,
+      var(--cyan) 0 25%,
+      var(--magenta) 25% 50%,
+      var(--yellow) 50% 75%,
+      #fff 75% 100%
+    );
+}
+
+.quote-nav .arrow {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+/* Transparent Vertika logo */
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 420px;
+  height: 168px;
+  overflow: visible;
+  position: relative;
+  z-index: 5;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 410px;
+  max-height: 154px;
+  object-fit: contain;
+  object-position: left center;
+  position: static;
+  transform: none;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 790px;
+  padding-top: 168px;
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+  min-height: 698px;
+}
+
+.hero-copy-pane {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  padding: 80px 72px 82px max(32px, calc((100vw - var(--wrap)) / 2));
+  background: #fff;
+}
+
+.hero-copy-inner {
+  width: min(650px, 100%);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 27px;
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: var(--cyan);
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 700px;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 1.03;
+  letter-spacing: -0.046em;
+  font-weight: 500;
+}
+
+.hero h1 .accent {
+  color: var(--magenta);
+}
+
+.hero-copy {
+  max-width: 585px;
+  margin: 29px 0 0;
+  color: #5c5c5c;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.btn {
+  display: inline-flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
+  padding: 0 26px;
+  border: 1px solid var(--black);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  transition: transform .18s ease, background .18s ease, color .18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  min-width: 252px;
+  color: #fff;
+  background: var(--black);
+}
+
+.btn-primary:hover {
+  background: #242424;
+}
+
+.btn-secondary {
+  min-width: 220px;
+  color: var(--ink);
+  background: #fff;
+}
+
+.btn-secondary:hover {
+  background: #f5f5f5;
+}
+
+.btn-arrow {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+/* =========================================================
+   HERO VISUAL / PRINTER ANIMATION
+========================================================= */
+
+.hero-visual {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.16) 30%, rgba(0,0,0,.025) 100%),
+    linear-gradient(#efefed, #e5e5e2);
+}
+
+/* angled white overlay similar to the reference mockup */
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  z-index: 6;
+  left: -96px;
+  top: -40px;
+  width: 180px;
+  height: 115%;
+  background: rgba(255,255,255,.78);
+  transform: skewX(-15deg);
+  box-shadow: 24px 0 55px rgba(0,0,0,.045);
+  pointer-events: none;
+}
+
+/* concrete panel seams */
+.wall-grid {
+  position: absolute;
+  inset: 0;
+  opacity: .72;
+  background-image:
+    linear-gradient(rgba(0,0,0,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.045) 1px, transparent 1px);
+  background-size: 100% 238px, 310px 100%;
+  pointer-events: none;
+}
+
+/* CMYK mural geometry behind the printer */
+.mural {
+  position: absolute;
+  z-index: 1;
+  right: -6%;
+  top: 8%;
+  width: 66%;
+  height: 82%;
+  overflow: hidden;
+}
+
+.mural-cyan {
+  position: absolute;
+  left: 0;
+  top: 25%;
+  width: 46%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 38% 30%, rgba(255,255,255,.38), transparent 24%),
+    linear-gradient(145deg, #49d8f3, var(--cyan));
+  mix-blend-mode: multiply;
+  opacity: .92;
+}
+
+.mural-magenta {
+  position: absolute;
+  left: 30%;
+  top: 31%;
+  width: 37%;
+  height: 51%;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(155deg, #ff4aae, var(--magenta));
+  mix-blend-mode: multiply;
+  opacity: .80;
+}
+
+.mural-yellow {
+  position: absolute;
+  right: 5%;
+  top: 7%;
+  width: 49%;
+  height: 45%;
+  background: var(--yellow);
+  clip-path: polygon(8% 0, 100% 7%, 78% 100%, 0 72%);
+  mix-blend-mode: multiply;
+  opacity: .84;
+}
+
+.mural-black {
+  position: absolute;
+  right: -4%;
+  bottom: 0;
+  width: 52%;
+  height: 57%;
+  background:
+    radial-gradient(circle, rgba(0,0,0,.84) 1.1px, transparent 1.5px),
+    linear-gradient(155deg, rgba(0,0,0,.92), rgba(0,0,0,.72));
+  background-size: 7px 7px, auto;
+  clip-path: polygon(31% 0, 100% 12%, 100% 100%, 0 100%);
+  opacity: .83;
+}
+
+.video-stage {
+  position: absolute;
+  z-index: 5;
+  left: 4%;
+  right: 2%;
+  bottom: 1%;
+  top: 2%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.video-stage video {
+  width: min(720px, 92%);
+  height: min(720px, 92%);
+  object-fit: contain;
+  object-position: 50% 100%;
+  background: transparent;
+  filter: drop-shadow(0 20px 22px rgba(0,0,0,.13));
+}
+
+.video-fallback {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #505050;
+  font-size: 13px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.demo-label {
+  position: absolute;
+  z-index: 9;
+  right: 34px;
+  top: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,.84);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.demo-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--magenta);
+  box-shadow: 12px 0 0 var(--yellow), -12px 0 0 var(--cyan);
+  margin: 0 10px;
+}
+
+/* =========================================================
+   FEATURE STRIP
+========================================================= */
+
+.feature-strip {
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.feature-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  width: min(var(--wrap), calc(100% - 64px));
+  margin: 0 auto;
+  padding: 22px 0 26px;
+}
+
+.mini-feature {
+  min-height: 132px;
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 24px 26px;
+  border: 1px solid #e9e9e9;
+  border-radius: 18px;
+  background: #fff;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.mini-icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #111;
+  border-radius: 50%;
+}
+
+.mini-feature:nth-child(2) .mini-icon {
+  border-radius: 0;
+  border: 0;
+  background:
+    radial-gradient(circle at 25% 25%, transparent 0 7px, #111 7.5px 8.5px, transparent 9px),
+    radial-gradient(circle at 75% 25%, transparent 0 7px, #111 7.5px 8.5px, transparent 9px),
+    radial-gradient(circle at 25% 75%, transparent 0 7px, #111 7.5px 8.5px, transparent 9px),
+    radial-gradient(circle at 75% 75%, #111 0 8px, transparent 8.5px);
+}
+
+.mini-feature:nth-child(3) .mini-icon {
+  border-radius: 10px 10px 18px 18px;
+  transform: scale(.8);
+}
+
+.mini-feature:nth-child(4) .mini-icon {
+  border-radius: 0;
+  border: 0;
+}
+
+.mini-feature:nth-child(4) .mini-icon::before {
+  content: "↗";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 42px;
+  font-weight: 300;
+}
+
+.mini-feature h3 {
+  margin: 0 0 7px;
+  font-size: 12px;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+.mini-feature p {
+  margin: 0;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.cmyk-rule {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 6px;
+}
+
+.cmyk-rule span:nth-child(1) { background: var(--cyan); }
+.cmyk-rule span:nth-child(2) { background: var(--magenta); }
+.cmyk-rule span:nth-child(3) { background: var(--yellow); }
+.cmyk-rule span:nth-child(4) { background: var(--black); }
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section {
+  padding: 102px 0;
+  background: #fff;
+}
+
+.section.soft {
+  background: var(--soft);
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 720px);
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 52px;
+}
+
+.section-label {
+  padding-top: 8px;
+  color: #767676;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.section h2 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.07;
+  letter-spacing: -.035em;
+  font-weight: 500;
+}
+
+.section-intro {
+  max-width: 650px;
+  margin: 18px 0 0;
+  color: #686868;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.service-card {
+  min-height: 280px;
+  padding: 32px 28px 28px;
+  border: 1px solid #e2e2e2;
+  border-radius: 20px;
+  background: #fff;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.service-num {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 82px;
+  color: #8c8c8c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.service-num::after {
+  content: "";
+  width: 38px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--cyan);
+  transition: width .25s ease;
+}
+
+.service-card:hover .service-num::after {
+  width: 72px;
+}
+
+.service-card:nth-child(2) .service-num::after { background: var(--magenta); }
+.service-card:nth-child(3) .service-num::after { background: var(--yellow); }
+.service-card:nth-child(4) .service-num::after { background: var(--black); }
+
+.service-card h3 {
+  margin: 0 0 13px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.service-card p {
+  margin: 0;
+  color: #686868;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.process-card {
+  position: relative;
+  min-height: 305px;
+  padding: 31px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.process-card::after {
+  content: attr(data-step);
+  position: absolute;
+  right: -4px;
+  bottom: -32px;
+  color: rgba(0,0,0,.045);
+  font-size: 150px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.process-card small {
+  display: inline-block;
+  color: var(--magenta);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.process-card:nth-child(2) small { color: #b29e00; }
+.process-card:nth-child(3) small { color: var(--cyan); }
+
+.process-card h3 {
+  margin: 82px 0 12px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.process-card p {
+  position: relative;
+  z-index: 2;
+  max-width: 330px;
+  margin: 0;
+  color: #696969;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   APPLICATIONS
+========================================================= */
+
+.application-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.application-card {
+  min-height: 220px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 20px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.application-card h3 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.application-card p {
+  margin: 0;
+  color: #686868;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.application-accent {
+  width: 50px;
+  height: 5px;
+  border-radius: 999px;
+  margin-bottom: 70px;
+  transition: width .25s ease;
+}
+
+.application-card:hover .application-accent {
+  width: 84px;
+}
+
+.application-card:nth-child(1) .application-accent { background: var(--cyan); }
+.application-card:nth-child(2) .application-accent { background: var(--magenta); }
+.application-card:nth-child(3) .application-accent { background: var(--yellow); }
+
+/* =========================================================
+   SURFACES
+========================================================= */
+
+.surface-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.surface {
+  padding: 13px 20px;
+  border: 1px solid #cfcfcf;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.surface:hover {
+  transform: translateY(-2px);
+  border-color: var(--black);
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0;
+  color: #fff;
+  background: var(--black);
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  right: -90px;
+  top: -115px;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  border: 75px solid var(--cyan);
+  opacity: .16;
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  right: 170px;
+  bottom: -210px;
+  width: 390px;
+  height: 390px;
+  background: var(--magenta);
+  opacity: .12;
+  transform: rotate(24deg);
+}
+
+.cta-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: center;
+}
+
+.cta h2 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+  font-weight: 500;
+}
+
+.cta p {
+  max-width: 650px;
+  margin: 22px 0 0;
+  color: #bdbdbd;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.cta .btn-primary {
+  color: #111;
+  background: #fff;
+  border-color: #fff;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  padding: 38px 0 42px;
+  background: #fff;
+  border-top: 1px solid #dedede;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  color: #747474;
+  font-size: 11px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.footer-cmyk {
+  display: flex;
+  gap: 5px;
+}
+
+.footer-cmyk span {
+  width: 26px;
+  height: 4px;
+}
+
+.footer-cmyk span:nth-child(1) { background: var(--cyan); }
+.footer-cmyk span:nth-child(2) { background: var(--magenta); }
+.footer-cmyk span:nth-child(3) { background: var(--yellow); }
+.footer-cmyk span:nth-child(4) { background: var(--black); }
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1160px) {
+  .nav-shell {
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .hero-grid {
+    grid-template-columns: 48% 52%;
+  }
+
+  .hero-copy-pane {
+    padding-right: 44px;
+  }
+
+  .feature-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mini-feature:nth-child(2) {
+    border-right: 0;
+  }
+
+  .mini-feature:nth-child(-n+2) {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  .service-card:nth-child(-n+2) {
+    border-bottom: 1px solid #d7d7d7;
+  }
+}
+
+@media (max-width: 860px) {
+  .wrap {
+    width: min(100% - 36px, var(--wrap));
+  }
+
+  .nav-shell {
+    min-height: 128px;
+    grid-template-columns: 1fr 150px;
+  }
+
+  .nav-left {
+    padding-left: 18px;
+  }
+
+  .brand-lockup {
+    width: 310px;
+    height: 128px;
+  }
+
+  .brand-logo {
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    max-height: 116px;
+    position: static;
+    transform: none;
+  }
+
+  .quote-nav {
+    gap: 12px;
+    font-size: 10px;
+  }
+
+  .hero {
+    padding-top: 128px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy-pane {
+    padding: 72px 26px 55px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 12vw, 64px);
+  }
+
+  .hero-visual {
+    min-height: 620px;
+  }
+
+  .hero-visual::before {
+    display: none;
+  }
+
+  .mural {
+    right: -2%;
+    width: 72%;
+  }
+
+  .video-stage {
+    inset: 0;
+  }
+
+  .video-stage video {
+    width: min(680px, 96vw);
+    height: min(680px, 96vw);
+  }
+
+  .section {
+    padding: 78px 0;
+  }
+
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .process-grid,
+  .application-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .nav-shell {
+    min-height: 88px;
+    grid-template-columns: 1fr 116px;
+  }
+
+  .brand-lockup {
+    width: 215px;
+    height: 88px;
+  }
+
+  .brand-logo {
+    width: 205px;
+    height: 205px;
+    left: -24px;
+  }
+
+  .brand-name {
+    font-size: 17px;
+    letter-spacing: .24em;
+  }
+
+  .brand-sub {
+    letter-spacing: .28em;
+  }
+
+  .quote-nav span:not(.arrow) {
+    display: none;
+  }
+
+  .quote-nav {
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: 104px;
+  }
+
+  .hero-copy-pane {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .hero-copy {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-visual {
+    min-height: 500px;
+  }
+
+  .demo-label {
+    top: 18px;
+    right: 18px;
+  }
+
+  .feature-strip-grid,
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-feature,
+  .mini-feature:nth-child(2),
+  .service-card,
+  .service-card:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .service-card:last-child,
+  .mini-feature:last-child {
+    border-bottom: 0;
+  }
+
+  .service-num {
+    margin-bottom: 50px;
+  }
+
+  .footer-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn,
+  .nav-center a::after {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   HOVER / INTERACTION POLISH + TYPED HEADINGS
+========================================================= */
+
+.mini-feature:hover,
+.service-card:hover,
+.process-card:hover,
+.application-card:hover {
+  transform: translateY(-3px);
+  border-color: #cfcfcf;
+  box-shadow: 0 14px 34px rgba(0,0,0,.07);
+}
+
+.mini-feature h3,
+.service-card h3,
+.process-card h3,
+.application-card h3 {
+  transition: color .2s ease;
+}
+
+.mini-feature:hover h3,
+.service-card:hover h3 { color: var(--cyan); }
+.process-card:hover h3 { color: var(--magenta); }
+.application-card:hover h3 { color: var(--cyan); }
+
+.mini-icon { transition: transform .25s ease; }
+.mini-feature:hover .mini-icon { transform: scale(1.08); }
+.mini-feature:nth-child(3):hover .mini-icon { transform: scale(.88); }
+
+.process-card::after { transition: color .25s ease; }
+.process-card:hover::after { color: rgba(236,0,140,.10); }
+
+a:focus-visible,
+button:focus-visible,
+.surface:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.nav-center a,
+.quote-nav,
+.brand-lockup { transition: opacity .2s ease; }
+.quote-nav:hover { opacity: .9; }
+
+/* typed section headings */
+.section h2 .type-line { display: inline; }
+
+.section h2 .type-caret {
+  display: inline-block;
+  width: 3px;
+  height: .82em;
+  margin-left: 6px;
+  border-radius: 2px;
+  background: var(--cyan);
+  vertical-align: -.06em;
+  animation: caretBlink .9s steps(1, end) infinite;
+}
+
+.section h2.is-typed .type-caret { display: none; }
+
+@keyframes caretBlink {
+  50% { opacity: 0; }
+}
+
+@media (max-width: 1160px) {
+  .feature-strip-grid { grid-template-columns: repeat(2, 1fr); }
+  .mini-feature,
+  .mini-feature:nth-child(2),
+  .mini-feature:nth-child(-n+2) { border: 1px solid #e9e9e9; }
+  .service-card,
+  .service-card:nth-child(2),
+  .service-card:nth-child(-n+2) { border: 1px solid #e2e2e2; }
+}
+
+@media (max-width: 860px) {
+  .feature-strip-grid { width: min(100% - 36px, var(--wrap)); }
+}
+
+@media (max-width: 620px) {
+  .feature-strip-grid,
+  .service-grid { grid-template-columns: 1fr; }
+  .mini-feature,
+  .mini-feature:nth-child(2),
+  .mini-feature:last-child { border: 1px solid #e9e9e9; }
+  .service-card,
+  .service-card:nth-child(2),
+  .service-card:last-child { border: 1px solid #e2e2e2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mini-feature,
+  .service-card,
+  .process-card,
+  .application-card,
+  .surface,
+  .mini-icon,
+  .application-accent,
+  .service-num::after { transition: none; }
+
+  .mini-feature:hover,
+  .service-card:hover,
+  .process-card:hover,
+  .application-card:hover,
+  .surface:hover { transform: none; }
+
+  .section h2 .type-caret { animation: none; display: none; }
+}
+
+/* =========================================================
+   WALL FIT SIMULATOR / QUOTE BUILDER (modal overlay)
+========================================================= */
+
+body.vwf-locked { overflow: hidden; }
+
+.vwf-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  padding: 28px;
+  background: rgba(10,10,10,.74);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.vwf-veil.is-open { display: block; }
+
+.vwf-sheet {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 24px;
+  box-shadow: 0 34px 90px rgba(0,0,0,.42);
+  overflow: hidden;
+}
+
+.vwf-bar {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 24px;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.vwf-bar-logo { height: 34px; width: auto; }
+
+.vwf-steps { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.vwf-stepdot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a2a2a2;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.vwf-stepdot i { display: block; width: 20px; height: 4px; background: #e2e2e2; }
+.vwf-stepdot.is-done i { background: var(--black); }
+.vwf-stepdot.is-now { color: var(--ink); }
+.vwf-stepdot.is-now i { background: var(--cyan); }
+
+.vwf-close {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #cfcfcf;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.vwf-close:hover { background: var(--black); color: #fff; border-color: var(--black); }
+
+.vwf-body { padding: 34px 34px 30px; }
+.vwf-panel[hidden] { display: none; }
+
+.vwf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.vwf-eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--cyan); }
+
+.vwf-h {
+  margin: 14px 0 10px;
+  font-size: clamp(28px, 3.4vw, 42px);
+  line-height: 1.06;
+  letter-spacing: -.035em;
+  font-weight: 500;
+}
+
+.vwf-sub { max-width: 64ch; margin: 0 0 26px; color: #686868; font-size: 15px; line-height: 1.65; }
+
+.vwf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+.vwf-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 30px; align-items: start; }
+
+.vwf-lbl {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.vwf-in, .vwf-sel, .vwf-ta {
+  width: 100%;
+  min-height: 52px;
+  padding: 13px 16px;
+  border: 1px solid #cfcfcf;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.vwf-ta { min-height: 90px; resize: vertical; }
+.vwf-in:focus-visible, .vwf-sel:focus-visible, .vwf-ta:focus-visible,
+.vwf-btn:focus-visible, .vwf-close:focus-visible, .vwf-card:focus-visible, .vwf-file:focus-within {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+.vwf-in.is-bad { border-color: var(--magenta); }
+.vwf-hint { margin-top: 7px; font-size: 12px; line-height: 1.5; color: #8a8a8a; }
+.vwf-hint.is-bad { color: var(--magenta); font-weight: 700; }
+
+.vwf-pick { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+
+.vwf-card {
+  display: block;
+  padding: 26px;
+  border: 1px solid #d7d7d7;
+  border-radius: 20px;
+  background: #fff;
+  color: var(--ink);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.vwf-card:hover { transform: translateY(-3px); border-color: var(--black); box-shadow: 0 14px 34px rgba(0,0,0,.08); }
+.vwf-card.is-sel { border-color: var(--cyan); box-shadow: inset 0 0 0 2px var(--cyan); }
+.vwf-card h4 { margin: 18px 0 8px; font-size: 20px; font-weight: 600; }
+.vwf-card p { margin: 0; color: #686868; font-size: 14px; line-height: 1.65; }
+
+.vwf-card-rate {
+  margin-top: 16px;
+  color: var(--magenta);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.vwf-swatch { height: 118px; border: 1px solid #e2e2e2; border-radius: 14px; background: repeating-linear-gradient(135deg, #f2f2f0 0 10px, #e9e9e6 10px 20px); }
+.vwf-swatch.panel { display: grid; place-items: center; background: #efefed; }
+.vwf-swatch.panel i { width: 104px; height: 74px; border-radius: 8px; background: repeating-linear-gradient(90deg, #e4e4e1 0 6px, #ededea 6px 12px); border: 1px solid #d2d2ce; box-shadow: 8px 10px 0 rgba(0,0,0,.09); }
+
+.vwf-stage { position: relative; height: 430px; margin-top: 10px; border: 1px solid #dedede; border-radius: 20px; background: linear-gradient(#f3f3f1, #e7e7e4); overflow: hidden; }
+.vwf-scene { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+.vwf-wall {
+  position: relative;
+  background-color: #fafaf9;
+  background-image: linear-gradient(to right, rgba(0,0,0,.055) 1px, transparent 1px), linear-gradient(to top, rgba(0,0,0,.055) 1px, transparent 1px);
+  box-shadow: inset 0 0 50px rgba(0,0,0,.07);
+}
+
+.vwf-floor { position: absolute; left: 0; top: 100%; transform-origin: top center; transform: rotateX(76deg); background: #dcdcd7; }
+.vwf-env { position: absolute; border: 1px dashed rgba(0,0,0,.42); }
+
+.vwf-print {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--magenta);
+  background: repeating-linear-gradient(38deg, rgba(236,0,140,.20) 0 10px, rgba(0,191,232,.16) 10px 20px);
+}
+
+.vwf-print span { padding: 3px 8px; background: rgba(255,255,255,.93); font-size: 11px; font-weight: 700; white-space: nowrap; }
+.vwf-print.is-panel { box-shadow: 10px 14px 20px rgba(0,0,0,.22); }
+
+.vwf-person { position: absolute; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; opacity: .4; }
+.vwf-person i { display: block; background: #5c5c5c; }
+
+.vwf-dim {
+  position: absolute;
+  padding: 2px 6px;
+  background: rgba(255,255,255,.92);
+  color: #5c5c5c;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.vwf-legend { position: absolute; left: 14px; bottom: 12px; display: flex; gap: 16px; color: #6a6a6a; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.vwf-legend span { display: flex; align-items: center; gap: 6px; }
+.vwf-legend i { width: 14px; height: 8px; display: block; }
+
+.vwf-block {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 34px;
+  background: rgba(10,10,10,.9);
+  color: #fff;
+  text-align: center;
+}
+
+.vwf-block.is-on { display: flex; }
+.vwf-block em { color: var(--yellow); font-style: normal; font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.vwf-block b { max-width: 24ch; font-size: 26px; font-weight: 500; letter-spacing: -.02em; line-height: 1.18; }
+.vwf-block small { max-width: 50ch; color: #c9c9c9; font-size: 13px; line-height: 1.6; }
+
+.vwf-note { margin-top: 18px; padding: 16px 18px; border: 1px solid #dedede; border-left: 4px solid var(--cyan); border-radius: 16px; background: var(--soft); font-size: 13px; line-height: 1.6; }
+.vwf-note.is-warn { border-left-color: var(--magenta); }
+.vwf-note.is-review { border-left-color: var(--yellow); }
+.vwf-note h5 { margin: 0 0 7px; font-size: 12px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.vwf-note p { margin: 0; color: #5f5f5f; }
+.vwf-note ul { margin: 8px 0 0; padding-left: 18px; color: #5f5f5f; }
+.vwf-note li { margin-bottom: 5px; }
+
+.vwf-rows { margin-top: 20px; border: 1px solid #dedede; border-radius: 18px; overflow: hidden; }
+.vwf-row { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 14px 18px; border-bottom: 1px solid #ececec; font-size: 14px; }
+.vwf-row:last-child { border-bottom: 0; }
+.vwf-row b { font-weight: 700; white-space: nowrap; }
+.vwf-row small { display: block; margin-top: 3px; color: #9a9a9a; font-size: 12px; }
+.vwf-row.is-muted, .vwf-row.is-muted b { color: #8f8f8f; }
+
+.vwf-total { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 22px; border-radius: 18px; margin-top: 12px; background: var(--black); color: #fff; }
+.vwf-total span { font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.vwf-total b { font-size: 26px; font-weight: 600; }
+
+.vwf-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.vwf-chip { padding: 7px 14px; border: 1px solid #cfcfcf; border-radius: 999px; background: #fff; font-size: 12px; font-weight: 700; }
+
+.vwf-file { display: block; padding: 18px; border: 1px dashed #c6c6c6; border-radius: 16px; background: var(--soft); cursor: pointer; }
+.vwf-file span { display: block; font-size: 13px; font-weight: 700; }
+.vwf-file em { display: block; margin-top: 5px; color: #8a8a8a; font-size: 12px; font-style: normal; }
+.vwf-file input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+
+.vwf-check { display: flex; gap: 11px; align-items: flex-start; margin-top: 14px; font-size: 13px; line-height: 1.55; color: #5f5f5f; cursor: pointer; }
+.vwf-check input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--cyan); }
+
+.vwf-foot {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 24px;
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid #e4e4e4;
+  flex-wrap: wrap;
+}
+
+.vwf-btn {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 28px;
+  border: 1px solid var(--black);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease;
+}
+
+.vwf-btn:hover { transform: translateY(-2px); }
+.vwf-btn.is-primary { background: var(--black); color: #fff; }
+.vwf-btn.is-primary:hover { background: #242424; }
+.vwf-btn:disabled { opacity: .38; cursor: not-allowed; transform: none; }
+.vwf-footnote { flex: 1 1 220px; color: #8a8a8a; font-size: 11px; line-height: 1.5; }
+
+.vwf-sent { text-align: center; padding: 30px 0 10px; }
+.vwf-sent .vwf-h { margin-top: 18px; }
+
+@media (max-width: 980px) {
+  .vwf-split { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 860px) {
+  .vwf-veil { padding: 0; }
+  .vwf-sheet { width: 100%; min-height: 100%; border: 0; border-radius: 0; box-shadow: none; }
+  .vwf-body { padding: 24px 20px 22px; }
+  .vwf-stage { height: 330px; }
+  .vwf-steps { display: none; }
+  .vwf-foot { padding: 14px 20px; }
+  .vwf-btn { flex: 1 1 auto; padding: 0 18px; }
+  .vwf-footnote { order: 3; flex-basis: 100%; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="nav-shell" aria-label="Main navigation">
+
+    <div class="nav-left">
+      <a class="brand-lockup" href="#top" aria-label="Vertika Wall Printing home">
+        <img
+          class="brand-logo"
+          src="vertika_logo_transparent.png"
+          alt="Vertika Wall Printing"
+        >
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#applications">Applications</a>
+      <a href="#surfaces">Surfaces</a>
+    </div>
+
+    <a class="quote-nav" href="#quote">
+      <span>Get a quote</span>
+      <span class="arrow">→</span>
+    </a>
+
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-grid">
+
+      <div class="hero-copy-pane">
+        <div class="hero-copy-inner">
+          <div class="eyebrow">UV direct-to-wall printing</div>
+
+          <h1>
+            Professional wall printing,
+            <span class="accent">in full colour.</span>
+          </h1>
+
+          <p class="hero-copy">
+            Vertika prints logos, photography, artwork and custom graphics directly onto interior walls using UV-cured ink. No vinyl, wallpaper or panels.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#quote">
+              <span>Request a quote</span>
+              <span class="btn-arrow">→</span>
+            </a>
+
+            <a class="btn btn-secondary" href="#process">
+              <span>See how it works</span>
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="wall-grid" aria-hidden="true"></div>
+
+        <div class="mural" aria-hidden="true">
+          <div class="mural-cyan"></div>
+          <div class="mural-magenta"></div>
+          <div class="mural-yellow"></div>
+          <div class="mural-black"></div>
+        </div>
+
+        <div class="demo-label">
+          <span class="demo-dot" aria-hidden="true"></span>
+          Printer demonstration
+        </div>
+
+        <div class="video-stage">
+          <video
+            id="printer-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            aria-label="Animated demonstration of the Vertika wall printer"
+          >
+            <source src="printer-animation.webm" type="video/webm">
+          </video>
+
+          <div class="video-fallback" id="video-fallback">
+            Printer animation unavailable
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="feature-strip" aria-label="Key benefits">
+    <div class="feature-strip-grid">
+
+      <article class="mini-feature">
+        <div class="mini-icon" aria-hidden="true"></div>
+        <div>
+          <h3>Precise placement</h3>
+          <p>Detailed artwork printed directly where it belongs.</p>
+        </div>
+      </article>
+
+      <article class="mini-feature">
+        <div class="mini-icon" aria-hidden="true"></div>
+        <div>
+          <h3>Full-colour output</h3>
+          <p>Photography, artwork and branding in vivid CMYK colour.</p>
+        </div>
+      </article>
+
+      <article class="mini-feature">
+        <div class="mini-icon" aria-hidden="true"></div>
+        <div>
+          <h3>UV-cured ink</h3>
+          <p>The print cures during production and is ready immediately.</p>
+        </div>
+      </article>
+
+      <article class="mini-feature">
+        <div class="mini-icon" aria-hidden="true"></div>
+        <div>
+          <h3>Printed on site</h3>
+          <p>No wallpaper seams, vinyl edges or separate panels.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="cmyk-rule" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-label">Services</div>
+        <div>
+          <h2>Direct printing without wallpaper or vinyl</h2>
+          <p class="section-intro">
+            Send us the artwork or the idea. We prepare it for the wall, set up on site and print the finished design directly onto the surface.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-num">01</div>
+          <h3>Full-colour printing</h3>
+          <p>Logos, photography, illustrations and detailed graphics printed directly onto the wall.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-num">02</div>
+          <h3>UV-cured ink</h3>
+          <p>The ink cures during printing, allowing the completed surface to be used immediately.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-num">03</div>
+          <h3>Seamless finish</h3>
+          <p>Artwork is printed directly onto the surface without panels, joins or vinyl edges.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-num">04</div>
+          <h3>Custom sizing</h3>
+          <p>Each print is prepared around the dimensions and layout of the individual space.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-label">Process</div>
+        <div>
+          <h2>From artwork to finished wall</h2>
+          <p class="section-intro">
+            The process is simple. We prepare the file, calibrate the printer to the surface and print the image directly on site.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card" data-step="1">
+          <small>Step 01</small>
+          <h3>Prepare the artwork</h3>
+          <p>We review your image and prepare it for the dimensions, scale and layout of the wall.</p>
+        </article>
+
+        <article class="process-card" data-step="2">
+          <small>Step 02</small>
+          <h3>Set up on site</h3>
+          <p>The printer is positioned and calibrated to the wall before printing begins.</p>
+        </article>
+
+        <article class="process-card" data-step="3">
+          <small>Step 03</small>
+          <h3>Print directly</h3>
+          <p>The image is printed onto the wall and cured with UV light during the printing process.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="applications">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-label">Applications</div>
+        <div>
+          <h2>Made for spaces that need something custom</h2>
+        </div>
+      </div>
+
+      <div class="application-grid">
+        <article class="application-card">
+          <div class="application-accent"></div>
+          <h3>Commercial</h3>
+          <p>Office branding, reception areas, meeting rooms and workplace graphics.</p>
+        </article>
+
+        <article class="application-card">
+          <div class="application-accent"></div>
+          <h3>Retail & hospitality</h3>
+          <p>Restaurants, stores, showrooms, hotels and customer-facing spaces.</p>
+        </article>
+
+        <article class="application-card">
+          <div class="application-accent"></div>
+          <h3>Residential</h3>
+          <p>Custom artwork, feature walls, photography and decorative graphics.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="surfaces">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-label">Surfaces</div>
+        <div>
+          <h2>Compatible with a range of wall materials</h2>
+        </div>
+      </div>
+
+      <div class="surface-list">
+        <span class="surface">Painted drywall</span>
+        <span class="surface">Concrete</span>
+        <span class="surface">Brick</span>
+        <span class="surface">Wood</span>
+        <span class="surface">Glass</span>
+        <span class="surface">Metal</span>
+        <span class="surface">Tile</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="quote">
+    <div class="wrap cta-grid">
+      <div>
+        <h2>Have a wall in mind?</h2>
+        <p>
+          Send us the wall dimensions, location and artwork if you have it. We can review the project and provide a quote.
+        </p>
+      </div>
+
+      <a class="btn btn-primary" id="quote-cta" data-vwf-open href="mailto:hello@vertikawallprinting.com">
+        <span>Request a quote</span>
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 Vertika Wall Printing</span>
+
+    <div class="footer-cmyk" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <span>UV direct-to-wall printing</span>
+  </div>
+</footer>
+
+<!-- =========================================================
+     WALL FIT SIMULATOR / QUOTE BUILDER
+     Opens over the site from the "Request a quote" button.
+========================================================= -->
+<div class="vwf-veil" id="vwf-veil" role="dialog" aria-modal="true" aria-label="Wall fit check and quote request">
+  <div class="vwf-sheet" id="vwf-sheet">
+
+    <div class="vwf-bar">
+      <img class="vwf-bar-logo" src="vertika_logo_transparent.png" alt="Vertika Wall Printing">
+
+      <div class="vwf-steps" id="vwf-steps" aria-hidden="true">
+        <span class="vwf-stepdot" data-step="1"><i></i>Service</span>
+        <span class="vwf-stepdot" data-step="2"><i></i>Wall</span>
+        <span class="vwf-stepdot" data-step="3"><i></i>Print</span>
+        <span class="vwf-stepdot" data-step="4"><i></i>Checks</span>
+        <span class="vwf-stepdot" data-step="5"><i></i>Estimate</span>
+        <span class="vwf-stepdot" data-step="6"><i></i>Quote</span>
+      </div>
+
+      <button type="button" class="vwf-close" id="vwf-close" aria-label="Close the quote builder">&times;</button>
+    </div>
+
+    <div class="cmyk-rule" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+    <div class="vwf-body">
+
+      <!-- STEP 1 -->
+      <section class="vwf-panel" data-panel="1">
+        <div class="vwf-eyebrow">Step 01 &middot; Select the service</div>
+        <h2 class="vwf-h">What are we printing?</h2>
+        <p class="vwf-sub">The questions, printer checks and pricing that follow all depend on this choice.</p>
+
+        <div class="vwf-pick">
+          <button type="button" class="vwf-card" data-service="wall">
+            <div class="vwf-swatch" aria-hidden="true"></div>
+            <h4>Direct-to-wall printing</h4>
+            <p>We travel to your location and print UV-cured artwork straight onto the wall.</p>
+            <div class="vwf-card-rate">$129.17 per m&sup2; &middot; approx. $12 per sq ft</div>
+          </button>
+
+          <button type="button" class="vwf-card" data-service="panel">
+            <div class="vwf-swatch panel" aria-hidden="true"><i></i></div>
+            <h4>Canvas, acrylic or mounted panel</h4>
+            <p>Artwork, murals or branding printed onto canvas, acrylic/plexiglass or another mountable material.</p>
+            <div class="vwf-card-rate">$172.22 per m&sup2; &middot; approx. $16 per sq ft</div>
+          </button>
+        </div>
+      </section>
+
+      <!-- STEP 2 -->
+      <section class="vwf-panel" data-panel="2" hidden>
+        <div class="vwf-eyebrow">Step 02 &middot; Available wall</div>
+        <h2 class="vwf-h">The wall you have.</h2>
+        <p class="vwf-sub">Measure the wall itself. The print can be smaller than the wall &mdash; you set that next.</p>
+
+        <div class="vwf-grid">
+          <div>
+            <label class="vwf-lbl" for="vwf-unit">Measurement unit</label>
+            <select class="vwf-sel" id="vwf-unit">
+              <option value="m">Metres</option>
+              <option value="cm">Centimetres</option>
+              <option value="ft" selected>Feet</option>
+              <option value="in">Inches</option>
+            </select>
+            <div class="vwf-hint">All measurements convert automatically.</div>
+          </div>
+
+          <div>
+            <label class="vwf-lbl" for="vwf-wall-w">Wall width (<span class="vwf-unit-lbl">ft</span>)</label>
+            <input class="vwf-in" id="vwf-wall-w" type="number" min="0" step="any" inputmode="decimal" value="12">
+            <div class="vwf-hint">Corner to corner.</div>
+          </div>
+
+          <div>
+            <label class="vwf-lbl" for="vwf-wall-h">Wall height (<span class="vwf-unit-lbl">ft</span>)</label>
+            <input class="vwf-in" id="vwf-wall-h" type="number" min="0" step="any" inputmode="decimal" value="8">
+            <div class="vwf-hint" id="vwf-wall-h-hint">Floor to ceiling.</div>
+          </div>
+
+          <div>
+            <label class="vwf-lbl" for="vwf-env">Location</label>
+            <select class="vwf-sel" id="vwf-env">
+              <option value="indoor">Indoor</option>
+              <option value="outdoor">Outdoor</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="vwf-lbl" for="vwf-surface">Wall surface</label>
+            <select class="vwf-sel" id="vwf-surface">
+              <option>Painted drywall</option>
+              <option>Concrete</option>
+              <option>Brick</option>
+              <option>Wood</option>
+              <option>Glass</option>
+              <option>Metal</option>
+              <option>Tile</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="vwf-lbl" for="vwf-obstructions">Obstructions or difficult access</label>
+            <input class="vwf-in" id="vwf-obstructions" type="text" placeholder="Outlets, windows, stairs, tight entry&hellip;">
+            <div class="vwf-hint">Leave empty if the wall is clear and easy to reach.</div>
+          </div>
+        </div>
+
+        <div class="vwf-note is-warn" id="vwf-ceiling-note" hidden>
+          <h5>Printing cannot be accomplished</h5>
+          <p id="vwf-ceiling-note-text"></p>
+        </div>
+      </section>
+
+      <!-- STEP 3 -->
+      <section class="vwf-panel" data-panel="3" hidden>
+        <div class="vwf-eyebrow">Step 03 &middot; Desired print</div>
+        <h2 class="vwf-h" id="vwf-print-h">How big should the print be?</h2>
+        <p class="vwf-sub" id="vwf-print-sub">The print does not have to fill the wall. Pricing uses these dimensions, not the wall size.</p>
+
+        <div class="vwf-split">
+          <div>
+            <div class="vwf-grid">
+              <div>
+                <label class="vwf-lbl" for="vwf-print-w">Print width (<span class="vwf-unit-lbl">ft</span>)</label>
+                <input class="vwf-in" id="vwf-print-w" type="number" min="0" step="any" inputmode="decimal" value="8">
+                <div class="vwf-hint" id="vwf-print-w-hint"></div>
+              </div>
+
+              <div>
+                <label class="vwf-lbl" for="vwf-print-hh">Print height (<span class="vwf-unit-lbl">ft</span>)</label>
+                <input class="vwf-in" id="vwf-print-hh" type="number" min="0" step="any" inputmode="decimal" value="4">
+                <div class="vwf-hint" id="vwf-print-h-hint"></div>
+              </div>
+
+              <div id="vwf-position-wrap">
+                <label class="vwf-lbl" for="vwf-position">Position on the wall</label>
+                <select class="vwf-sel" id="vwf-position">
+                  <option value="centre">Centred</option>
+                  <option value="left">Aligned left</option>
+                  <option value="right">Aligned right</option>
+                </select>
+              </div>
+
+              <div id="vwf-vertical-wrap">
+                <label class="vwf-lbl" for="vwf-vertical">Vertical placement</label>
+                <select class="vwf-sel" id="vwf-vertical">
+                  <option value="even">Even margins</option>
+                  <option value="max">Maximum height</option>
+                </select>
+                <div class="vwf-hint" id="vwf-vertical-hint"></div>
+              </div>
+
+              <div>
+                <label class="vwf-lbl" for="vwf-orientation">Orientation</label>
+                <select class="vwf-sel" id="vwf-orientation">
+                  <option value="auto">From my dimensions</option>
+                  <option value="landscape">Landscape</option>
+                  <option value="portrait">Portrait</option>
+                  <option value="square">Square</option>
+                </select>
+                <div class="vwf-hint" id="vwf-orientation-hint"></div>
+              </div>
+            </div>
+
+            <button type="button" class="vwf-btn" id="vwf-fill" style="margin-top:20px">Fill the printable area</button>
+          </div>
+
+          <div>
+            <div class="vwf-stage" id="vwf-stage">
+              <div class="vwf-scene" id="vwf-scene">
+                <div class="vwf-wall" id="vwf-wall">
+                  <div class="vwf-floor" id="vwf-floor"></div>
+                  <div class="vwf-env" id="vwf-envelope"></div>
+                  <div class="vwf-print" id="vwf-printrect"><span id="vwf-printrect-label"></span></div>
+                  <div class="vwf-person" id="vwf-person"><i id="vwf-person-head"></i><i id="vwf-person-body"></i></div>
+                  <div class="vwf-dim" id="vwf-dim-w"></div>
+                  <div class="vwf-dim" id="vwf-dim-h"></div>
+                  <div class="vwf-dim" id="vwf-dim-reach"></div>
+                </div>
+              </div>
+
+              <div class="vwf-legend" aria-hidden="true">
+                <span><i style="border:1px dashed rgba(0,0,0,.5)"></i>Printable area</span>
+                <span><i style="background:rgba(236,0,140,.28);border:1px solid var(--magenta)"></i>Your print</span>
+              </div>
+
+              <div class="vwf-block" id="vwf-stage-block">
+                <em>Cannot print</em>
+                <b>The machine will not fit this room.</b>
+                <small id="vwf-stage-block-text"></small>
+              </div>
+            </div>
+            <div class="vwf-hint" id="vwf-stage-hint"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 4 -->
+      <section class="vwf-panel" data-panel="4" hidden>
+        <div class="vwf-eyebrow">Step 04 &middot; Printer capability</div>
+        <h2 class="vwf-h">What the machine can actually do here.</h2>
+        <p class="vwf-sub">Checked against the printer configuration. Anything we cannot confirm from your entries is flagged for manual review rather than assumed.</p>
+
+        <div id="vwf-caps"></div>
+
+        <div class="vwf-rows" id="vwf-caps-rows"></div>
+      </section>
+
+      <!-- STEP 5 -->
+      <section class="vwf-panel" data-panel="5" hidden>
+        <div class="vwf-eyebrow">Step 05 &middot; Starting estimate</div>
+        <h2 class="vwf-h">Itemised, and honest about the unknowns.</h2>
+
+        <div class="vwf-rows" id="vwf-estimate-rows"></div>
+        <div class="vwf-total"><span>Starting estimated total</span><b id="vwf-estimate-total">&mdash;</b></div>
+
+        <div class="vwf-note is-review" id="vwf-review-note" hidden>
+          <h5>Requires review &mdash; not included in the total</h5>
+          <p>These charges are not configured yet, so they are neither priced nor treated as free.</p>
+          <div class="vwf-chips" id="vwf-review-chips"></div>
+        </div>
+
+        <div class="vwf-note">
+          <h5>Starting estimate only</h5>
+          <p>Starting estimate only&mdash;not a final guaranteed quote. Final pricing and printability depend on confirmed measurements, wall condition, surface, access, artwork, materials, travel, preparation, and installation requirements.</p>
+        </div>
+      </section>
+
+      <!-- STEP 6 -->
+      <section class="vwf-panel" data-panel="6" hidden>
+        <div id="vwf-quote-form">
+          <div class="vwf-eyebrow">Step 06 &middot; Quote request</div>
+          <h2 class="vwf-h">Where should we send it?</h2>
+          <p class="vwf-sub">Everything from the previous steps travels with this enquiry. You will see the whole thing before it goes anywhere.</p>
+
+          <div class="vwf-grid">
+            <div>
+              <label class="vwf-lbl" for="vwf-name">Name</label>
+              <input class="vwf-in" id="vwf-name" type="text" autocomplete="name">
+              <div class="vwf-hint is-bad" id="vwf-name-err"></div>
+            </div>
+            <div>
+              <label class="vwf-lbl" for="vwf-email">Email</label>
+              <input class="vwf-in" id="vwf-email" type="email" autocomplete="email">
+              <div class="vwf-hint is-bad" id="vwf-email-err"></div>
+            </div>
+            <div>
+              <label class="vwf-lbl" for="vwf-phone">Phone number</label>
+              <input class="vwf-in" id="vwf-phone" type="tel" autocomplete="tel">
+              <div class="vwf-hint is-bad" id="vwf-phone-err"></div>
+            </div>
+            <div>
+              <label class="vwf-lbl" for="vwf-address">Project address or ZIP / postal code</label>
+              <input class="vwf-in" id="vwf-address" type="text" autocomplete="street-address">
+              <div class="vwf-hint is-bad" id="vwf-address-err"></div>
+            </div>
+            <div>
+              <label class="vwf-lbl" for="vwf-date">Desired completion date</label>
+              <input class="vwf-in" id="vwf-date" type="date">
+            </div>
+          </div>
+
+          <div class="vwf-grid" style="margin-top:20px">
+            <label class="vwf-file">
+              <span>Wall photo</span>
+              <em id="vwf-photo-name">No file selected</em>
+              <input id="vwf-photo" type="file" accept="image/*">
+            </label>
+            <label class="vwf-file">
+              <span>Artwork or logo</span>
+              <em id="vwf-art-name">No file selected</em>
+              <input id="vwf-art" type="file">
+            </label>
+          </div>
+
+          <div style="margin-top:20px">
+            <label class="vwf-lbl" for="vwf-notes">Additional notes</label>
+            <textarea class="vwf-ta" id="vwf-notes" placeholder="Anything else we should know about the space, timing or artwork."></textarea>
+          </div>
+
+          <label class="vwf-check">
+            <input type="checkbox" id="vwf-ack">
+            <span>I understand my measurements are approximate, the estimate is not a guaranteed final price, and the project requires review and approval by Vertika.</span>
+          </label>
+        </div>
+
+        <div id="vwf-quote-review" hidden>
+          <div class="vwf-eyebrow">Step 06 &middot; Review before sending</div>
+          <h2 class="vwf-h">Check this, then send.</h2>
+          <p class="vwf-sub">Nothing has been sent yet. Read it over &mdash; you can go back and change anything.</p>
+          <div class="vwf-rows" id="vwf-review-rows"></div>
+        </div>
+
+        <div id="vwf-quote-sent" hidden>
+          <div class="vwf-sent">
+            <div class="vwf-eyebrow" style="justify-content:center">Reference <span id="vwf-ref"></span></div>
+            <h2 class="vwf-h">Your email is ready to send.</h2>
+            <p class="vwf-sub" style="margin-left:auto;margin-right:auto">Your email app should have opened with every detail filled in. If it did not, use the button below and we will pick it up from there. Attach your wall photo and artwork to that email &mdash; a web page cannot attach files for you.</p>
+            <a class="vwf-btn is-primary" id="vwf-mailto-fallback" href="mailto:hello@vertikawallprinting.com">Open the email again</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="vwf-foot">
+      <button type="button" class="vwf-btn" id="vwf-back">Back</button>
+      <div class="vwf-footnote" id="vwf-footnote"></div>
+      <button type="button" class="vwf-btn is-primary" id="vwf-next">Continue <span aria-hidden="true">&rarr;</span></button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const printerVideo = document.getElementById("printer-video");
+const videoFallback = document.getElementById("video-fallback");
+
+printerVideo.addEventListener("canplay", function () {
+  videoFallback.style.display = "none";
+});
+
+printerVideo.addEventListener("error", function () {
+  videoFallback.style.display = "flex";
+});
+
+printerVideo.play().catch(function () {
+  videoFallback.style.display = "flex";
+});
+
+/* =========================================================
+   TYPED SECTION HEADINGS
+   Each .section h2 types itself out the first time it
+   scrolls into view. Height is measured and pinned first so
+   nothing on the page shifts while it types.
+========================================================= */
+
+(function () {
+  const heads = Array.prototype.slice.call(document.querySelectorAll(".section h2"));
+  if (!heads.length) return;
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  heads.forEach(function (h) {
+    h.setAttribute("data-text", h.textContent.trim());
+    h.style.minHeight = h.offsetHeight + "px";
+    h.innerHTML = '<span class="type-line"></span><span class="type-caret" aria-hidden="true"></span>';
+  });
+
+  function type(h) {
+    const text = h.getAttribute("data-text");
+    const line = h.querySelector(".type-line");
+    let i = 0;
+    (function step() {
+      line.textContent = text.slice(0, ++i);
+      if (i < text.length) window.setTimeout(step, 20);
+      else h.classList.add("is-typed");
+    })();
+  }
+
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      type(e.target);
+    });
+  }, { threshold: 0.35 });
+
+  heads.forEach(function (h) { io.observe(h); });
+})();
+
+/* =========================================================
+   WALL FIT SIMULATOR / QUOTE BUILDER
+   ---------------------------------------------------------
+   PRINTER_CONFIG and PRICING_CONFIG below are the only two
+   places to edit machine limits and rates. Anything marked
+   confirmed:false is NOT used to declare a job printable —
+   it routes the project to manual review instead.
+========================================================= */
+
+const PRINTER_CONFIG = {
+  /* --- CONFIRMED by Vertika --- */
+  minWallHeight:        { value: 2.3876, confirmed: true,  note: "94 in — below this the rail hits the ceiling and the machine cannot be set up" },
+  maxPrintHeight:       { value: 2.20,   confirmed: true,  note: "Maximum vertical print travel" },
+  clearanceLeftRight:   { value: 0.4826, confirmed: true,  note: "19 in — wheel-to-printhead offset, each side" },
+  clearanceFloor:       { value: 0.4826, confirmed: true,  note: "19 in — wheel-to-printhead offset at the floor" },
+  clearanceCeiling:     { value: 0.4826, confirmed: true,  note: "19 in — wheel-to-printhead offset at the ceiling" },
+
+  /* --- NEEDS CONFIRMATION — replace value and set confirmed:true --- */
+  minFloorClearance:    { value: 0.4064, confirmed: false, note: "Lowest usable floor margin in maximum-height mode (16 in assumed)" },
+  mastHeight:           { value: 3.00,   confirmed: false, note: "Overall mast/rail height when standing" },
+  minPrintHeight:       { value: null,   confirmed: false, note: "Smallest print height the machine can produce" },
+  maxWidthPerPass:      { value: null,   confirmed: false, note: "Maximum continuous printed width in a single pass" },
+  canContinueSideways:  { value: null,   confirmed: false, note: "Whether the machine repositions to continue across a wider wall" },
+  minPrintableArea:     { value: null,   confirmed: false, note: "Minimum job area in square metres" },
+  supportedSurfaces:    { value: ["Painted drywall", "Concrete", "Brick", "Wood", "Glass", "Metal", "Tile"], confirmed: true, note: "Listed on the website" },
+  unsupportedSurfaces:  { value: null,   confirmed: false, note: "Surfaces that are explicitly not printable" },
+  outdoorAllowed:       { value: null,   confirmed: false, note: "Whether outdoor work is offered, and under what conditions" },
+  panelMaxWidth:        { value: null,   confirmed: false, note: "Largest panel width" },
+  panelMaxHeight:       { value: null,   confirmed: false, note: "Largest panel height" },
+  panelMinWidth:        { value: null,   confirmed: false, note: "Smallest panel width" },
+  panelMinHeight:       { value: null,   confirmed: false, note: "Smallest panel height" }
+};
+
+const PRICING_CONFIG = {
+  /* --- CONFIRMED rates, per square metre --- */
+  wallRatePerM2:  129.17,   /* approx. $12.00 per sq ft */
+  panelRatePerM2: 172.22,   /* approx. $16.00 per sq ft */
+
+  /* --- Additions: null means "Requires review", never free --- */
+  minimumJob: null, material: null, canvas: null, acrylic: null, materialThickness: null,
+  wallPreparation: null, texturedSurface: null, designWork: null, travel: null,
+  difficultAccess: null, outdoorWork: null, mountingHardware: null, installation: null,
+  shipping: null, rushService: null
+};
+
+const VWF_UNITS = { m: 1, cm: 0.01, ft: 0.3048, in: 0.0254 };
+const VWF_EMAIL = "hello@vertikawallprinting.com";
+const VWF_TEXTURED = ["Concrete", "Brick", "Tile", "other"];
+
+(function () {
+  const veil = document.getElementById("vwf-veil");
+  if (!veil) return;
+
+  const sheet   = document.getElementById("vwf-sheet");
+  const closeBtn = document.getElementById("vwf-close");
+  const backBtn = document.getElementById("vwf-back");
+  const nextBtn = document.getElementById("vwf-next");
+  const footnote = document.getElementById("vwf-footnote");
+  const panels  = Array.prototype.slice.call(veil.querySelectorAll(".vwf-panel"));
+  const dots    = Array.prototype.slice.call(veil.querySelectorAll(".vwf-stepdot"));
+  const el = (id) => document.getElementById(id);
+
+  let opener = null;
+  const state = {
+    step: 1, service: null, unit: "ft",
+    wallW: 12, wallH: 8, env: "indoor", surface: "Painted drywall", obstructions: "",
+    printW: 8, printH: 4, position: "centre", vertical: "even", orientation: "auto",
+    name: "", email: "", phone: "", address: "", date: "", notes: "",
+    photoName: "", artName: "", ack: false, reviewing: false, sent: false, ref: ""
+  };
+
+  /* ---------- units and formatting ---------- */
+  const toM = (v) => (parseFloat(v) || 0) * VWF_UNITS[state.unit];
+  const fromM = (m) => m / VWF_UNITS[state.unit];
+  const round = (n, d) => Math.round(n * Math.pow(10, d)) / Math.pow(10, d);
+
+  function fmt(m) {
+    if (state.unit === "m")  return round(m, 2).toFixed(2) + " m";
+    if (state.unit === "cm") return Math.round(m * 100) + " cm";
+    if (state.unit === "in") return Math.round(m / 0.0254) + " in";
+    const totalIn = m / 0.0254, ft = Math.floor(totalIn / 12), inch = Math.round(totalIn - ft * 12);
+    if (inch === 12) return (ft + 1) + "\u2032 0\u2033";
+    return ft > 0 ? ft + "\u2032 " + inch + "\u2033" : inch + "\u2033";
+  }
+  const money = (n) => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const sqm = (n) => round(n, 2).toFixed(2) + " m\u00b2";
+
+  /* ---------- geometry, all internal maths in metres ---------- */
+  function geo() {
+    const isWall = state.service !== "panel";
+    const wallW = toM(state.wallW), wallH = toM(state.wallH);
+    const side = PRINTER_CONFIG.clearanceLeftRight.value;
+    const top = PRINTER_CONFIG.clearanceCeiling.value;
+    const bottom = state.vertical === "max"
+      ? PRINTER_CONFIG.minFloorClearance.value
+      : PRINTER_CONFIG.clearanceFloor.value;
+
+    const envW = isWall ? Math.max(0, wallW - side * 2) : wallW;
+    const envH = isWall
+      ? Math.max(0, Math.min(PRINTER_CONFIG.maxPrintHeight.value, wallH - top - bottom))
+      : wallH;
+
+    const wantW = toM(state.printW), wantH = toM(state.printH);
+    const printW = isWall ? Math.min(wantW, envW) : wantW;
+    const printH = isWall ? Math.min(wantH, envH) : wantH;
+
+    return {
+      isWall, wallW, wallH, side, top, bottom, envW, envH, wantW, wantH, printW, printH,
+      area: printW * printH,
+      ceilingTooLow: isWall && wallH > 0 && wallH < PRINTER_CONFIG.minWallHeight.value,
+      ceilingForFullHeight: PRINTER_CONFIG.maxPrintHeight.value + top + bottom
+    };
+  }
+
+  function orientationOf(g) {
+    if (state.orientation !== "auto") return state.orientation;
+    if (Math.abs(g.printW - g.printH) < 0.02) return "square";
+    return g.printW > g.printH ? "landscape" : "portrait";
+  }
+
+  /* ---------- printer capability validation ---------- */
+  function capabilities() {
+    const g = geo();
+    const fails = [], reviews = [], passes = [];
+
+    if (g.isWall) {
+      if (g.ceilingTooLow) {
+        fails.push({
+          limit: "Minimum wall height (" + fmt(PRINTER_CONFIG.minWallHeight.value) + ")",
+          detail: "Your wall height of " + fmt(g.wallH) + " is below the minimum. The rail would hit the ceiling, so the machine cannot be set up in this room.",
+          suggest: "A room with at least " + fmt(PRINTER_CONFIG.minWallHeight.value) + " of floor-to-ceiling height is required."
+        });
+      } else {
+        passes.push("Wall height clears the " + fmt(PRINTER_CONFIG.minWallHeight.value) + " minimum.");
+      }
+
+      if (g.wantH > g.envH + 0.001) {
+        fails.push({
+          limit: "Maximum print height here (" + fmt(g.envH) + ")",
+          detail: "You asked for " + fmt(g.wantH) + ". This wall allows " + fmt(g.envH) +
+                  " once " + fmt(g.top) + " of ceiling clearance and " + fmt(g.bottom) + " of floor clearance are removed" +
+                  (g.envH >= PRINTER_CONFIG.maxPrintHeight.value - 0.001 ? ", and the machine tops out at " + fmt(PRINTER_CONFIG.maxPrintHeight.value) + "." : "."),
+          suggest: "Allowable height: " + fmt(g.envH) + "."
+        });
+      } else if (g.wantH > 0) {
+        passes.push("Print height of " + fmt(g.wantH) + " is within the " + fmt(g.envH) + " available.");
+      }
+
+      if (g.wantW > g.envW + 0.001) {
+        fails.push({
+          limit: "Maximum print width here (" + fmt(g.envW) + ")",
+          detail: "The printhead cannot reach within " + fmt(g.side) + " of each side wall, leaving " + fmt(g.envW) + " of printable width on a " + fmt(g.wallW) + " wall.",
+          suggest: "Allowable width: " + fmt(g.envW) + "."
+        });
+      } else if (g.wantW > 0) {
+        passes.push("Print width of " + fmt(g.wantW) + " fits inside the reachable area.");
+      }
+
+      if (g.wallH >= g.ceilingForFullHeight) {
+        passes.push("Ceiling clears the mast, so the full " + fmt(PRINTER_CONFIG.maxPrintHeight.value) + " print height is reachable.");
+      } else if (!g.ceilingTooLow) {
+        reviews.push("Mast height is not confirmed (assumed " + fmt(PRINTER_CONFIG.mastHeight.value) + "). Reaching the full " + fmt(PRINTER_CONFIG.maxPrintHeight.value) + " print height needs about " + fmt(g.ceilingForFullHeight) + " of wall height.");
+      }
+
+      if (!PRINTER_CONFIG.maxWidthPerPass.confirmed) {
+        reviews.push("Maximum width per continuous pass is not configured, so wide walls need confirmation on whether the machine repositions to continue.");
+      }
+      if (!PRINTER_CONFIG.minPrintHeight.confirmed || !PRINTER_CONFIG.minPrintableArea.confirmed) {
+        reviews.push("Minimum print height and minimum job area are not configured.");
+      }
+
+      const supported = PRINTER_CONFIG.supportedSurfaces.value.indexOf(state.surface) !== -1;
+      if (supported) passes.push(state.surface + " is a listed compatible surface.");
+      else reviews.push("The surface you selected is not on the listed compatible surfaces, so it needs review.");
+      if (VWF_TEXTURED.indexOf(state.surface) !== -1) reviews.push("Textured surfaces affect ink lay-down and are reviewed before quoting.");
+
+      if (state.env === "outdoor") reviews.push("Outdoor restrictions are not configured, so outdoor work needs confirmation.");
+      if (state.obstructions.trim()) reviews.push("Obstructions or difficult access were noted, which needs an on-site assessment.");
+    } else {
+      reviews.push("Maximum and minimum panel dimensions are not configured, so panel size needs confirmation.");
+      if (g.printW > 0 && g.printH > 0) passes.push("Panel size recorded as " + fmt(g.printW) + " \u00d7 " + fmt(g.printH) + ".");
+    }
+
+    return { g, fails, reviews, passes, blocked: g.ceilingTooLow };
+  }
+
+  /* ---------- pricing, deterministic ---------- */
+  function estimate() {
+    const g = geo();
+    const rate = g.isWall ? PRICING_CONFIG.wallRatePerM2 : PRICING_CONFIG.panelRatePerM2;
+    const base = g.area * rate;
+
+    const keys = [["minimumJob", "Minimum job charge"], ["designWork", "Design work"]];
+    if (g.isWall) {
+      keys.push(["wallPreparation", "Wall preparation"], ["travel", "Travel"]);
+      if (VWF_TEXTURED.indexOf(state.surface) !== -1) keys.push(["texturedSurface", "Textured surface"]);
+      if (state.env === "outdoor") keys.push(["outdoorWork", "Outdoor work"]);
+      if (state.obstructions.trim()) keys.push(["difficultAccess", "Difficult access"]);
+    } else {
+      keys.push(["material", "Material"], ["materialThickness", "Material thickness"],
+                ["mountingHardware", "Mounting hardware"], ["installation", "Installation"], ["shipping", "Shipping"]);
+    }
+    if (state.date) {
+      const days = (new Date(state.date) - new Date()) / 86400000;
+      if (days >= 0 && days <= 14) keys.push(["rushService", "Rush service"]);
+    }
+
+    const known = [], review = [];
+    keys.forEach(function (k) {
+      const v = PRICING_CONFIG[k[0]];
+      if (v === null || v === undefined) review.push(k[1]);
+      else known.push({ label: k[1], amount: v });
+    });
+
+    const total = known.reduce(function (sum, k) { return sum + k.amount; }, base);
+    return { g, rate, base, known, review, total };
+  }
+
+  /* ---------- the drawing ---------- */
+  function drawStage() {
+    const g = geo();
+    const stage = el("vwf-stage");
+    const w = stage.clientWidth, h = stage.clientHeight;
+    if (!w || !h || g.wallW <= 0 || g.wallH <= 0) return;
+
+    const scale = Math.min((w - 96) / g.wallW, (h - 84) / g.wallH);
+    const px = (m) => (m * scale) + "px";
+
+    const wall = el("vwf-wall");
+    wall.style.width = px(g.wallW);
+    wall.style.height = px(g.wallH);
+    wall.style.backgroundSize = px(0.5) + " " + px(0.5);
+
+    const floor = el("vwf-floor");
+    floor.style.width = px(g.wallW);
+    floor.style.height = px(Math.min(g.wallW * 0.4, 2.4));
+    floor.style.backgroundImage = "linear-gradient(to right, rgba(0,0,0,.05) 1px, transparent 1px)";
+    floor.style.backgroundSize = px(0.5) + " 100%";
+
+    const env = el("vwf-envelope");
+    env.hidden = !g.isWall;
+    env.style.display = g.isWall ? "block" : "none";
+    if (g.isWall) {
+      env.style.left = px(g.side);
+      env.style.bottom = px(g.bottom);
+      env.style.width = px(g.envW);
+      env.style.height = px(g.envH);
+    }
+
+    let left;
+    if (!g.isWall) left = (g.wallW - g.printW) / 2;
+    else if (state.position === "left") left = g.side;
+    else if (state.position === "right") left = g.wallW - g.side - g.printW;
+    else left = g.side + Math.max(0, (g.envW - g.printW) / 2);
+
+    const rect = el("vwf-printrect");
+    rect.style.left = px(Math.max(0, left));
+    rect.style.bottom = g.isWall ? px(g.bottom) : px(Math.max(0, (g.wallH - g.printH) / 2 + 0.15));
+    rect.style.width = px(g.printW);
+    rect.style.height = px(g.printH);
+    rect.className = "vwf-print" + (g.isWall ? "" : " is-panel");
+    el("vwf-printrect-label").textContent = fmt(g.printW) + " \u00d7 " + fmt(g.printH);
+
+    const person = el("vwf-person");
+    const personH = 1.75, personW = personH * 0.26;
+    person.style.left = px(Math.max(0.05, g.wallW - personW - 0.15));
+    person.style.width = px(personW);
+    person.style.height = px(personH);
+    const head = el("vwf-person-head");
+    head.style.width = px(personW * 0.62);
+    head.style.height = px(personW * 0.62);
+    head.style.borderRadius = "50%";
+    const body = el("vwf-person-body");
+    body.style.width = "100%";
+    body.style.height = px(personH * 0.72);
+    body.style.marginTop = "2%";
+    body.style.borderRadius = px(personW * 0.45) + " " + px(personW * 0.45) + " 0 0";
+
+    const dimW = el("vwf-dim-w");
+    dimW.textContent = "Wall " + fmt(g.wallW);
+    dimW.style.left = "50%";
+    dimW.style.top = "-26px";
+    dimW.style.transform = "translateX(-50%)";
+
+    const dimH = el("vwf-dim-h");
+    dimH.textContent = "Wall height " + fmt(g.wallH);
+    dimH.style.left = "6px";
+    dimH.style.top = "6px";
+
+    const reach = el("vwf-dim-reach");
+    if (g.isWall) {
+      reach.style.display = "block";
+      reach.textContent = "Machine reach " + fmt(g.bottom + g.envH);
+      reach.style.left = "6px";
+      reach.style.bottom = px(g.bottom + g.envH);
+    } else {
+      reach.style.display = "none";
+    }
+
+    el("vwf-scene").style.opacity = g.ceilingTooLow ? "0.25" : "1";
+    el("vwf-stage-block").className = "vwf-block" + (g.ceilingTooLow ? " is-on" : "");
+    el("vwf-stage-block-text").textContent = g.ceilingTooLow
+      ? "This room measures " + fmt(g.wallH) + " floor to ceiling. The printer needs a minimum of " +
+        fmt(PRINTER_CONFIG.minWallHeight.value) + " to be set up at all. You can still send the project for manual review."
+      : "";
+  }
+
+  /* ---------- rendering ---------- */
+  function rows(container, list) {
+    container.innerHTML = "";
+    list.forEach(function (r) {
+      const div = document.createElement("div");
+      div.className = "vwf-row" + (r.muted ? " is-muted" : "");
+      const left = document.createElement("div");
+      left.innerHTML = "<span>" + r.k + "</span>" + (r.note ? "<small>" + r.note + "</small>" : "");
+      const right = document.createElement("b");
+      right.textContent = r.v;
+      div.appendChild(left);
+      div.appendChild(right);
+      container.appendChild(div);
+    });
+  }
+
+  function renderCaps() {
+    const c = capabilities(), g = c.g, box = el("vwf-caps");
+    box.innerHTML = "";
+
+    if (c.blocked || c.fails.length) {
+      const n = document.createElement("div");
+      n.className = "vwf-note is-warn";
+      let html = "<h5>" + (c.blocked ? "Printing cannot be accomplished" : "Manual review required") + "</h5><ul>";
+      c.fails.forEach(function (f) {
+        html += "<li><strong>" + f.limit + "</strong> &mdash; " + f.detail + (f.suggest ? " <em>" + f.suggest + "</em>" : "") + "</li>";
+      });
+      html += "</ul>";
+      n.innerHTML = html;
+      box.appendChild(n);
+    } else if (c.passes.length) {
+      const n = document.createElement("div");
+      n.className = "vwf-note";
+      n.innerHTML = "<h5>Within the machine\u2019s capabilities</h5><ul><li>" + c.passes.join("</li><li>") + "</li></ul>";
+      box.appendChild(n);
+    }
+
+    if (c.reviews.length) {
+      const n = document.createElement("div");
+      n.className = "vwf-note is-review";
+      n.innerHTML = "<h5>Manual review required</h5><p>These are not configured or not confirmed, so they are not assumed either way.</p><ul><li>" + c.reviews.join("</li><li>") + "</li></ul>";
+      box.appendChild(n);
+    }
+
+    const list = [
+      { k: "Wall entered", v: fmt(g.wallW) + " \u00d7 " + fmt(g.wallH) },
+      { k: "Desired print", v: fmt(g.wantW) + " \u00d7 " + fmt(g.wantH) }
+    ];
+    if (g.isWall) {
+      list.push(
+        { k: "Printable area on this wall", v: fmt(g.envW) + " \u00d7 " + fmt(g.envH) },
+        { k: "Side clearance required", v: fmt(g.side) + " each side", note: PRINTER_CONFIG.clearanceLeftRight.note },
+        { k: "Floor clearance applied", v: fmt(g.bottom), note: state.vertical === "max" ? "Maximum-height mode \u2014 value needs confirmation" : PRINTER_CONFIG.clearanceFloor.note },
+        { k: "Ceiling clearance required", v: fmt(g.top) },
+        { k: "Machine maximum print height", v: fmt(PRINTER_CONFIG.maxPrintHeight.value) },
+        { k: "Minimum wall height", v: fmt(PRINTER_CONFIG.minWallHeight.value) },
+        { k: "Wall height for full print height", v: fmt(g.ceilingForFullHeight) }
+      );
+    }
+    list.push(
+      { k: "Print used for pricing", v: fmt(g.printW) + " \u00d7 " + fmt(g.printH) },
+      { k: "Print area", v: sqm(g.area) },
+      { k: "Orientation", v: orientationOf(g) }
+    );
+    rows(el("vwf-caps-rows"), list);
+  }
+
+  function renderEstimate() {
+    const e = estimate(), g = e.g;
+    const list = [
+      { k: "Selected service", v: g.isWall ? "Direct-to-wall printing" : "Canvas / acrylic / mounted panel" },
+      { k: "Wall dimensions", v: fmt(g.wallW) + " \u00d7 " + fmt(g.wallH) },
+      { k: "Desired print dimensions", v: fmt(g.printW) + " \u00d7 " + fmt(g.printH) },
+      { k: "Printable area", v: sqm(g.area) },
+      { k: "Price per square metre", v: money(e.rate), note: g.isWall ? "Confirmed direct-wall rate" : "Confirmed mounted-panel rate" },
+      { k: "Base printing price", v: money(e.base), note: sqm(g.area) + " \u00d7 " + money(e.rate) }
+    ];
+    e.known.forEach(function (k) { list.push({ k: k.label, v: money(k.amount) }); });
+    e.review.forEach(function (r) { list.push({ k: r, v: "Requires review", note: "Not configured \u2014 not priced and not free", muted: true }); });
+    rows(el("vwf-estimate-rows"), list);
+
+    el("vwf-estimate-total").textContent = money(e.total);
+    el("vwf-review-note").hidden = e.review.length === 0;
+    const chips = el("vwf-review-chips");
+    chips.innerHTML = "";
+    e.review.concat(capabilities().reviews.length ? ["Printer capability review"] : []).forEach(function (r) {
+      const s = document.createElement("span");
+      s.className = "vwf-chip";
+      s.textContent = r;
+      chips.appendChild(s);
+    });
+  }
+
+  function summaryLines() {
+    const e = estimate(), g = e.g, c = capabilities();
+    const lines = [
+      "VERTIKA WALL PRINTING \u2014 QUOTE REQUEST",
+      "Reference: " + state.ref,
+      "",
+      "CUSTOMER",
+      "Name: " + state.name,
+      "Email: " + state.email,
+      "Phone: " + state.phone,
+      "Address / postcode: " + state.address,
+      "Desired completion: " + (state.date || "Not specified"),
+      "",
+      "PROJECT",
+      "Service: " + (g.isWall ? "Direct-to-wall printing" : "Canvas / acrylic / mounted panel"),
+      "Measurement unit entered: " + state.unit,
+      "Wall dimensions: " + fmt(g.wallW) + " \u00d7 " + fmt(g.wallH),
+      "Desired print: " + fmt(g.printW) + " \u00d7 " + fmt(g.printH) + " (" + sqm(g.area) + ")",
+      "Orientation: " + orientationOf(g),
+      "Position on wall: " + state.position + " / " + (state.vertical === "max" ? "maximum height" : "even margins"),
+      "Location: " + state.env,
+      "Surface: " + state.surface,
+      "Obstructions: " + (state.obstructions || "None noted"),
+      "",
+      "PRINTER CHECKS",
+      c.blocked ? "BLOCKED: wall height below the " + fmt(PRINTER_CONFIG.minWallHeight.value) + " minimum" : "Within configured limits for the entered dimensions"
+    ];
+    c.fails.forEach(function (f) { lines.push("Exceeded: " + f.limit + " \u2014 " + f.suggest); });
+    c.reviews.forEach(function (r) { lines.push("Review: " + r); });
+    lines.push(
+      "",
+      "ESTIMATE",
+      "Rate: " + money(e.rate) + " per m\u00b2",
+      "Base printing: " + sqm(g.area) + " \u00d7 " + money(e.rate) + " = " + money(e.base),
+      "Starting estimated total: " + money(e.total),
+      "Requires review: " + (e.review.length ? e.review.join(", ") : "None"),
+      "",
+      "FILES",
+      "Wall photo: " + (state.photoName || "not attached"),
+      "Artwork: " + (state.artName || "not attached"),
+      "",
+      "NOTES",
+      state.notes || "None",
+      "",
+      "Measurements are approximate and taken from the online fit check.",
+      "Starting estimate only \u2014 not a final guaranteed quote."
+    );
+    return lines;
+  }
+
+  function renderReview() {
+    const e = estimate(), g = e.g, c = capabilities();
+    rows(el("vwf-review-rows"), [
+      { k: "Name", v: state.name || "\u2014" },
+      { k: "Email", v: state.email || "\u2014" },
+      { k: "Phone", v: state.phone || "\u2014" },
+      { k: "Address / postcode", v: state.address || "\u2014" },
+      { k: "Desired completion", v: state.date || "Not specified" },
+      { k: "Service", v: g.isWall ? "Direct-to-wall printing" : "Canvas / acrylic / panel" },
+      { k: "Wall", v: fmt(g.wallW) + " \u00d7 " + fmt(g.wallH) + " \u00b7 " + state.surface + " \u00b7 " + state.env },
+      { k: "Print", v: fmt(g.printW) + " \u00d7 " + fmt(g.printH) + " \u00b7 " + sqm(g.area) + " \u00b7 " + orientationOf(g) },
+      { k: "Printer checks", v: c.blocked ? "Cannot print \u2014 manual review" : (c.fails.length ? "Exceeds a limit \u2014 manual review" : "Within limits") },
+      { k: "Items requiring review", v: String(e.review.length + c.reviews.length) },
+      { k: "Starting estimate", v: money(e.total) },
+      { k: "Wall photo", v: state.photoName || "Not attached" },
+      { k: "Artwork", v: state.artName || "Not attached" },
+      { k: "Notes", v: state.notes || "None" }
+    ]);
+  }
+
+  function contactErrors() {
+    return {
+      name: state.name.trim() ? "" : "Required",
+      email: /.+@.+\..+/.test(state.email) ? "" : "A valid email is required",
+      phone: state.phone.trim() ? "" : "Required",
+      address: state.address.trim() ? "" : "Required"
+    };
+  }
+
+  function render() {
+    const g = geo(), c = capabilities();
+
+    panels.forEach(function (p) { p.hidden = Number(p.getAttribute("data-panel")) !== state.step; });
+    dots.forEach(function (d) {
+      const n = Number(d.getAttribute("data-step"));
+      d.className = "vwf-stepdot" + (n === state.step ? " is-now" : (n < state.step ? " is-done" : ""));
+    });
+
+    Array.prototype.forEach.call(veil.querySelectorAll(".vwf-unit-lbl"), function (s) { s.textContent = state.unit; });
+    veil.querySelectorAll(".vwf-card").forEach(function (b) {
+      b.className = "vwf-card" + (b.getAttribute("data-service") === state.service ? " is-sel" : "");
+    });
+
+    /* step 2 */
+    const low = g.ceilingTooLow;
+    el("vwf-wall-h").className = "vwf-in" + (low ? " is-bad" : "");
+    el("vwf-wall-h-hint").className = "vwf-hint" + (low ? " is-bad" : "");
+    el("vwf-wall-h-hint").textContent = !g.isWall
+      ? "Where the finished piece will hang."
+      : (low
+        ? "Below the " + fmt(PRINTER_CONFIG.minWallHeight.value) + " minimum \u2014 the rail will not clear the ceiling."
+        : "Floor to ceiling. Minimum " + fmt(PRINTER_CONFIG.minWallHeight.value) + ". This wall allows " + fmt(g.envH) + " of print height.");
+    el("vwf-ceiling-note").hidden = !low;
+    el("vwf-ceiling-note-text").textContent = low
+      ? "At " + fmt(g.wallH) + " this room is below the " + fmt(PRINTER_CONFIG.minWallHeight.value) +
+        " minimum, so the printer cannot be set up here. You can still continue and send the project for manual review."
+      : "";
+
+    /* step 3 */
+    el("vwf-print-h").textContent = g.isWall ? "How big should the print be?" : "How big is the panel?";
+    el("vwf-print-sub").textContent = g.isWall
+      ? "The print does not have to fill the wall. Pricing uses these dimensions, not the wall size."
+      : "Panel dimensions drive the price. Maximum and minimum panel sizes are not configured yet, so the size is confirmed on review.";
+    el("vwf-position-wrap").style.display = g.isWall ? "" : "none";
+    el("vwf-vertical-wrap").style.display = g.isWall ? "" : "none";
+    el("vwf-print-w-hint").textContent = g.isWall ? "Maximum here: " + fmt(g.envW) : "";
+    el("vwf-print-h-hint").textContent = g.isWall ? "Maximum here: " + fmt(g.envH) : "";
+    el("vwf-print-w-hint").className = "vwf-hint" + (g.wantW > g.envW + 0.001 && g.isWall ? " is-bad" : "");
+    el("vwf-print-h-hint").className = "vwf-hint" + (g.wantH > g.envH + 0.001 && g.isWall ? " is-bad" : "");
+    el("vwf-vertical-hint").textContent = state.vertical === "max"
+      ? "Floor margin drops to " + fmt(PRINTER_CONFIG.minFloorClearance.value) + " (needs confirmation) \u2014 margins are no longer even."
+      : "Equal " + fmt(g.top) + " clearance top and bottom.";
+    el("vwf-orientation-hint").textContent = "Currently " + orientationOf(g) + ".";
+    el("vwf-stage-hint").textContent = g.isWall
+      ? "Dashed outline is what the machine can reach on this wall. Figure shown is 1.75 m for scale."
+      : "The panel shown mounted on the wall. Figure shown is 1.75 m for scale.";
+    drawStage();
+
+    /* steps 4-6 */
+    renderCaps();
+    renderEstimate();
+    if (state.step === 6) {
+      const errs = contactErrors();
+      ["name", "email", "phone", "address"].forEach(function (k) { el("vwf-" + k + "-err").textContent = state.showErrors ? errs[k] : ""; });
+      el("vwf-quote-form").hidden = state.reviewing || state.sent;
+      el("vwf-quote-review").hidden = !state.reviewing || state.sent;
+      el("vwf-quote-sent").hidden = !state.sent;
+      if (state.reviewing) renderReview();
+    }
+
+    /* footer */
+    backBtn.disabled = state.step === 1 && !state.reviewing;
+    backBtn.hidden = state.sent;
+    nextBtn.hidden = state.sent;
+    if (state.step === 1) {
+      nextBtn.disabled = !state.service;
+      nextBtn.innerHTML = "Continue &rarr;";
+      footnote.textContent = state.service ? "" : "Choose a service to continue.";
+    } else if (state.step === 6 && state.reviewing) {
+      nextBtn.disabled = false;
+      nextBtn.innerHTML = "Confirm and send";
+      footnote.textContent = "Nothing is sent until you press confirm.";
+    } else if (state.step === 6) {
+      nextBtn.disabled = false;
+      nextBtn.innerHTML = "Review my request &rarr;";
+      footnote.textContent = state.ack ? "" : "Please confirm the acknowledgement above.";
+    } else if (state.step === 5) {
+      nextBtn.disabled = false;
+      nextBtn.innerHTML = "Continue to quote &rarr;";
+      footnote.textContent = "Starting estimate only \u2014 not a final guaranteed quote.";
+    } else {
+      nextBtn.disabled = false;
+      nextBtn.innerHTML = (c.blocked || c.fails.length) ? "Continue for manual review &rarr;" : "Continue &rarr;";
+      footnote.textContent = c.blocked
+        ? "The machine cannot be set up in this room. You can still send the project for manual review."
+        : (c.fails.length ? "Your print exceeds a printer limit \u2014 we will review it manually." : "");
+    }
+  }
+
+  /* ---------- navigation ---------- */
+  function go(step) {
+    state.step = Math.min(6, Math.max(1, step));
+    state.reviewing = false;
+    render();
+    veil.scrollTop = 0;
+  }
+
+  nextBtn.addEventListener("click", function () {
+    if (state.step === 6 && state.reviewing) { send(); return; }
+    if (state.step === 6) {
+      state.showErrors = true;
+      const errs = contactErrors();
+      const bad = Object.keys(errs).some(function (k) { return errs[k]; });
+      if (bad || !state.ack) {
+        render();
+        footnote.textContent = bad ? "Please complete the required fields." : "Please confirm the acknowledgement above.";
+        return;
+      }
+      state.reviewing = true;
+      render();
+      veil.scrollTop = 0;
+      return;
+    }
+    go(state.step + 1);
+  });
+
+  backBtn.addEventListener("click", function () {
+    if (state.reviewing) { state.reviewing = false; render(); return; }
+    go(state.step - 1);
+  });
+
+  function send() {
+    const d = new Date();
+    state.ref = "VWP-" + d.getFullYear() + String(d.getMonth() + 1).padStart(2, "0") + String(d.getDate()).padStart(2, "0") +
+                "-" + String(Math.floor(Math.random() * 9000) + 1000);
+    const href = "mailto:" + VWF_EMAIL +
+      "?subject=" + encodeURIComponent("Quote request " + state.ref + " \u2014 " + (state.name || "website")) +
+      "&body=" + encodeURIComponent(summaryLines().join("\n"));
+    el("vwf-mailto-fallback").setAttribute("href", href);
+    el("vwf-ref").textContent = state.ref;
+    state.sent = true;
+    render();
+    window.location.href = href;
+  }
+
+  /* ---------- inputs ---------- */
+  veil.querySelectorAll(".vwf-card").forEach(function (b) {
+    b.addEventListener("click", function () {
+      state.service = b.getAttribute("data-service");
+      render();
+    });
+  });
+
+  el("vwf-unit").addEventListener("change", function (e) {
+    const from = VWF_UNITS[state.unit], to = VWF_UNITS[e.target.value];
+    ["wallW", "wallH", "printW", "printH"].forEach(function (k) {
+      state[k] = round((parseFloat(state[k]) || 0) * from / to, 3);
+    });
+    state.unit = e.target.value;
+    el("vwf-wall-w").value = state.wallW;
+    el("vwf-wall-h").value = state.wallH;
+    el("vwf-print-w").value = state.printW;
+    el("vwf-print-hh").value = state.printH;
+    render();
+  });
+
+  const bind = (id, key, cast) => {
+    const node = el(id);
+    if (!node) return;
+    node.addEventListener("input", function () {
+      state[key] = cast ? cast(node.value) : node.value;
+      render();
+    });
+    node.addEventListener("change", function () {
+      state[key] = cast ? cast(node.value) : node.value;
+      render();
+    });
+  };
+
+  bind("vwf-wall-w", "wallW", parseFloat);
+  bind("vwf-wall-h", "wallH", parseFloat);
+  bind("vwf-print-w", "printW", parseFloat);
+  bind("vwf-print-hh", "printH", parseFloat);
+  bind("vwf-env", "env");
+  bind("vwf-surface", "surface");
+  bind("vwf-obstructions", "obstructions");
+  bind("vwf-position", "position");
+  bind("vwf-vertical", "vertical");
+  bind("vwf-orientation", "orientation");
+  bind("vwf-name", "name");
+  bind("vwf-email", "email");
+  bind("vwf-phone", "phone");
+  bind("vwf-address", "address");
+  bind("vwf-date", "date");
+  bind("vwf-notes", "notes");
+
+  el("vwf-ack").addEventListener("change", function (e) { state.ack = e.target.checked; render(); });
+  el("vwf-photo").addEventListener("change", function (e) {
+    state.photoName = e.target.files[0] ? e.target.files[0].name : "";
+    el("vwf-photo-name").textContent = state.photoName || "No file selected";
+  });
+  el("vwf-art").addEventListener("change", function (e) {
+    state.artName = e.target.files[0] ? e.target.files[0].name : "";
+    el("vwf-art-name").textContent = state.artName || "No file selected";
+  });
+
+  el("vwf-fill").addEventListener("click", function () {
+    const g = geo();
+    if (!g.isWall) return;
+    state.printW = round(fromM(g.envW), 2);
+    state.printH = round(fromM(g.envH), 2);
+    el("vwf-print-w").value = state.printW;
+    el("vwf-print-hh").value = state.printH;
+    render();
+  });
+
+  /* ---------- open / close, focus, keyboard ---------- */
+  const FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+  function open(trigger) {
+    opener = trigger || document.activeElement;
+    veil.classList.add("is-open");
+    document.body.classList.add("vwf-locked");
+    render();
+    window.setTimeout(function () {
+      const first = veil.querySelector(".vwf-card") || closeBtn;
+      first.focus();
+      drawStage();
+    }, 30);
+  }
+
+  function close() {
+    veil.classList.remove("is-open");
+    document.body.classList.remove("vwf-locked");
+    if (opener && typeof opener.focus === "function") opener.focus();
+  }
+
+  document.querySelectorAll("[data-vwf-open]").forEach(function (node) {
+    node.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      open(node);
+    });
+  });
+
+  closeBtn.addEventListener("click", close);
+  veil.addEventListener("mousedown", function (ev) { if (ev.target === veil) close(); });
+
+  document.addEventListener("keydown", function (ev) {
+    if (!veil.classList.contains("is-open")) return;
+    if (ev.key === "Escape") { close(); return; }
+    if (ev.key !== "Tab") return;
+    const nodes = Array.prototype.filter.call(sheet.querySelectorAll(FOCUSABLE), function (n) {
+      return n.offsetParent !== null && !n.hidden;
+    });
+    if (!nodes.length) return;
+    const first = nodes[0], last = nodes[nodes.length - 1];
+    if (ev.shiftKey && document.activeElement === first) { ev.preventDefault(); last.focus(); }
+    else if (!ev.shiftKey && document.activeElement === last) { ev.preventDefault(); first.focus(); }
+  });
+
+  window.addEventListener("resize", function () {
+    if (veil.classList.contains("is-open")) drawStage();
+  });
+
+  if (window.location.hash === "#quote-check") open(null);
+  render();
+})();
+
+</script>
+
+</body>
+</html>
