@@ -556,7 +556,7 @@ a {
 }
 
 .mini-feature:nth-child(4) .mini-icon::before {
-  content: "â†—";
+  content: "\2197";
   position: absolute;
   inset: 0;
   display: grid;
@@ -2114,7 +2114,7 @@ body.vwf-locked { overflow: hidden; }
 
     <a class="quote-nav" data-vwf-open href="#quote">
       <span>Get a quote</span>
-      <span class="arrow">â†’</span>
+      <span class="arrow">&rarr;</span>
     </a>
 
   </nav>
@@ -2141,12 +2141,12 @@ body.vwf-locked { overflow: hidden; }
           <div class="hero-actions">
             <a class="btn btn-primary" href="#quote">
               <span>Request a quote</span>
-              <span class="btn-arrow">â†’</span>
+              <span class="btn-arrow">&rarr;</span>
             </a>
 
             <a class="btn btn-secondary" href="#process">
               <span>See how it works</span>
-              <span class="btn-arrow">â†’</span>
+              <span class="btn-arrow">&rarr;</span>
             </a>
           </div>
         </div>
@@ -2455,13 +2455,13 @@ body.vwf-locked { overflow: hidden; }
       <div class="cta-actions">
         <a class="btn btn-primary" id="quote-cta" data-vwf-open href="mailto:vertikawallprinting@gmail.com">
           <span>Request a quote</span>
-          <span class="btn-arrow">â†’</span>
+          <span class="btn-arrow">&rarr;</span>
         </a>
         <a class="btn btn-secondary" href="mailto:vertikawallprinting@gmail.com">
           <span>Email us directly</span>
-          <span class="btn-arrow">â†’</span>
+          <span class="btn-arrow">&rarr;</span>
         </a>
-        <p class="quote-meta">Takes about 30 seconds Â· check your ceiling height first</p>
+        <p class="quote-meta">Takes about 30 seconds &middot; check your ceiling height first</p>
       </div>
     </div>
   </section>
@@ -2847,19 +2847,19 @@ printerVideo.play().catch(function () {
    ---------------------------------------------------------
    PRINTER_CONFIG and PRICING_CONFIG below are the only two
    places to edit machine limits and rates. Anything marked
-   confirmed:false is NOT used to declare a job printable â€”
+   confirmed:false is NOT used to declare a job printable --
    it routes the project to manual review instead.
 ========================================================= */
 
 const PRINTER_CONFIG = {
   /* --- CONFIRMED by Vertika --- */
-  minWallHeight:        { value: 2.3876, confirmed: true,  note: "94 in â€” below this the rail hits the ceiling and the machine cannot be set up" },
+  minWallHeight:        { value: 2.3876, confirmed: true,  note: "94 in - below this the rail hits the ceiling and the machine cannot be set up" },
   maxPrintHeight:       { value: 2.20,   confirmed: true,  note: "Maximum vertical print travel" },
-  clearanceLeftRight:   { value: 0.4826, confirmed: true,  note: "19 in â€” wheel-to-printhead offset, each side" },
-  clearanceFloor:       { value: 0.4826, confirmed: true,  note: "19 in â€” wheel-to-printhead offset at the floor" },
-  clearanceCeiling:     { value: 0.4826, confirmed: true,  note: "19 in â€” wheel-to-printhead offset at the ceiling" },
+  clearanceLeftRight:   { value: 0.4826, confirmed: true,  note: "19 in - wheel-to-printhead offset, each side" },
+  clearanceFloor:       { value: 0.4826, confirmed: true,  note: "19 in - wheel-to-printhead offset at the floor" },
+  clearanceCeiling:     { value: 0.4826, confirmed: true,  note: "19 in - wheel-to-printhead offset at the ceiling" },
 
-  /* --- NEEDS CONFIRMATION â€” replace value and set confirmed:true --- */
+  /* --- NEEDS CONFIRMATION - replace value and set confirmed:true --- */
   minFloorClearance:    { value: 0.4064, confirmed: false, note: "Lowest usable floor margin in maximum-height mode (16 in assumed)" },
   mastHeight:           { value: 3.00,   confirmed: false, note: "Overall mast/rail height when standing" },
   minPrintHeight:       { value: null,   confirmed: false, note: "Smallest print height the machine can produce" },
@@ -3318,21 +3318,21 @@ const VWF_TEXTURED = ["Concrete", "Brick", "Tile", "other"];
       el("vwf-fit-status-body").textContent = g.isWall
         ? ((reducedH ? "This ceiling allows " + fmt(g.envH) + " of print height. " : "") +
           (reducedW ? "The printhead needs " + fmt(g.side) + " at each side, leaving " + fmt(g.envW) + " of width. " : "") +
-          "The size used for the estimate is " + fmt(g.printW) + " Ã— " + fmt(g.printH) + ".")
-        : "The requested artwork is larger than the panel area. The size used for the estimate is " + fmt(g.printW) + " Ã— " + fmt(g.printH) + ".";
+          "The size used for the estimate is " + fmt(g.printW) + " x " + fmt(g.printH) + ".")
+        : "The requested artwork is larger than the panel area. The size used for the estimate is " + fmt(g.printW) + " x " + fmt(g.printH) + ".";
     } else {
       el("vwf-fit-status-tag").textContent = "Fits";
       el("vwf-fit-status-title").textContent = "This print fits your " + (g.isWall ? "wall" : "panel") + ".";
       el("vwf-fit-status-body").textContent = g.isWall
-        ? "It sits inside the machineâ€™s reach with " + fmt(g.bottom) + " below the artwork and " + fmt(Math.max(0, g.wallH - g.bottom - g.printH)) + " above it."
+        ? "It sits inside the machine's reach with " + fmt(g.bottom) + " below the artwork and " + fmt(Math.max(0, g.wallH - g.bottom - g.printH)) + " above it."
         : "The artwork sits within the panel dimensions you entered.";
     }
 
     const sqft = g.area * 10.7639;
-    el("vwf-fit-print-size").textContent = fmt(g.printW) + " Ã— " + fmt(g.printH);
-    el("vwf-fit-price").textContent = sqft.toFixed(2) + " sq ft Â· base printing " + money(e.base);
+    el("vwf-fit-print-size").textContent = fmt(g.printW) + " x " + fmt(g.printH);
+    el("vwf-fit-price").textContent = sqft.toFixed(2) + " sq ft - base printing " + money(e.base);
     rows(el("vwf-fit-facts"), [
-      { k: "Printable area", v: fmt(g.envW) + " Ã— " + fmt(g.envH) },
+      { k: "Printable area", v: fmt(g.envW) + " x " + fmt(g.envH) },
       { k: g.isWall ? "Ceiling entered" : "Area height", v: fmt(g.wallH) },
       { k: g.isWall ? "Side clearance" : "Area width", v: g.isWall ? fmt(g.side) + " each side" : fmt(g.wallW) },
       { k: "Machine max height", v: fmt(PRINTER_CONFIG.maxPrintHeight.value) },
