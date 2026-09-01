@@ -556,7 +556,7 @@ a {
 }
 
 .mini-feature:nth-child(4) .mini-icon::before {
-  content: "↗";
+  content: "â†—";
   position: absolute;
   inset: 0;
   display: grid;
@@ -1066,14 +1066,52 @@ footer {
 }
 
 .footer-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
   color: #747474;
-  font-size: 11px;
-  letter-spacing: .07em;
-  text-transform: uppercase;
+}
+
+.footer-contact p {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.footer-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.footer-contact-links a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: var(--cyan);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color .2s ease;
+}
+
+.footer-contact-links a:hover,
+.footer-contact-links a:focus-visible {
+  color: var(--black);
+}
+
+.footer-contact-links a:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+.footer-contact-separator {
+  color: #b3b3b3;
 }
 
 .footer-cmyk {
@@ -1337,6 +1375,15 @@ footer {
   }
 
   .footer-row {
+    align-items: flex-start;
+    grid-template-columns: 1fr;
+  }
+
+  .footer-contact-separator {
+    display: none;
+  }
+
+  .footer-contact-links {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -2067,7 +2114,7 @@ body.vwf-locked { overflow: hidden; }
 
     <a class="quote-nav" data-vwf-open href="#quote">
       <span>Get a quote</span>
-      <span class="arrow">→</span>
+      <span class="arrow">â†’</span>
     </a>
 
   </nav>
@@ -2094,12 +2141,12 @@ body.vwf-locked { overflow: hidden; }
           <div class="hero-actions">
             <a class="btn btn-primary" href="#quote">
               <span>Request a quote</span>
-              <span class="btn-arrow">→</span>
+              <span class="btn-arrow">â†’</span>
             </a>
 
             <a class="btn btn-secondary" href="#process">
               <span>See how it works</span>
-              <span class="btn-arrow">→</span>
+              <span class="btn-arrow">â†’</span>
             </a>
           </div>
         </div>
@@ -2406,15 +2453,15 @@ body.vwf-locked { overflow: hidden; }
       </div>
 
       <div class="cta-actions">
-        <a class="btn btn-primary" id="quote-cta" data-vwf-open href="mailto:hello@vertikawallprinting.com">
+        <a class="btn btn-primary" id="quote-cta" data-vwf-open href="mailto:vertikawallprinting@gmail.com">
           <span>Request a quote</span>
-          <span class="btn-arrow">→</span>
+          <span class="btn-arrow">â†’</span>
         </a>
-        <a class="btn btn-secondary" href="mailto:hello@vertikawallprinting.com">
+        <a class="btn btn-secondary" href="mailto:vertikawallprinting@gmail.com">
           <span>Email us directly</span>
-          <span class="btn-arrow">→</span>
+          <span class="btn-arrow">â†’</span>
         </a>
-        <p class="quote-meta">Takes about 30 seconds · check your ceiling height first</p>
+        <p class="quote-meta">Takes about 30 seconds Â· check your ceiling height first</p>
       </div>
     </div>
   </section>
@@ -2423,13 +2470,18 @@ body.vwf-locked { overflow: hidden; }
 
 <footer>
   <div class="wrap footer-row">
-    <span>© 2026 Vertika Wall Printing</span>
+    <div class="footer-contact">
+      <p>Would you like to contact us directly for a more personalized quote?</p>
+      <div class="footer-contact-links">
+        <a href="mailto:vertikawallprinting@gmail.com" aria-label="Email Vertika Wall Printing at vertikawallprinting@gmail.com">vertikawallprinting@gmail.com</a>
+        <span class="footer-contact-separator" aria-hidden="true">&bull;</span>
+        <a href="tel:+15145184518" aria-label="Call Vertika Wall Printing at 514-518-4518">514-518-4518</a>
+      </div>
+    </div>
 
     <div class="footer-cmyk" aria-hidden="true">
       <span></span><span></span><span></span><span></span>
     </div>
-
-    <span>UV direct-to-wall printing</span>
   </div>
 </footer>
 
@@ -2717,7 +2769,7 @@ body.vwf-locked { overflow: hidden; }
             <div class="vwf-eyebrow" style="justify-content:center">Reference <span id="vwf-ref"></span></div>
             <h2 class="vwf-h">Your email is ready to send.</h2>
             <p class="vwf-sub" style="margin-left:auto;margin-right:auto">Your email app should have opened with every detail filled in. If it did not, use the button below and we will pick it up from there. Attach your wall photo and artwork to that email &mdash; a web page cannot attach files for you.</p>
-            <a class="vwf-btn is-primary" id="vwf-mailto-fallback" href="mailto:hello@vertikawallprinting.com">Open the email again</a>
+            <a class="vwf-btn is-primary" id="vwf-mailto-fallback" href="mailto:vertikawallprinting@gmail.com">Open the email again</a>
           </div>
         </div>
       </section>
@@ -2795,19 +2847,19 @@ printerVideo.play().catch(function () {
    ---------------------------------------------------------
    PRINTER_CONFIG and PRICING_CONFIG below are the only two
    places to edit machine limits and rates. Anything marked
-   confirmed:false is NOT used to declare a job printable —
+   confirmed:false is NOT used to declare a job printable â€”
    it routes the project to manual review instead.
 ========================================================= */
 
 const PRINTER_CONFIG = {
   /* --- CONFIRMED by Vertika --- */
-  minWallHeight:        { value: 2.3876, confirmed: true,  note: "94 in — below this the rail hits the ceiling and the machine cannot be set up" },
+  minWallHeight:        { value: 2.3876, confirmed: true,  note: "94 in â€” below this the rail hits the ceiling and the machine cannot be set up" },
   maxPrintHeight:       { value: 2.20,   confirmed: true,  note: "Maximum vertical print travel" },
-  clearanceLeftRight:   { value: 0.4826, confirmed: true,  note: "19 in — wheel-to-printhead offset, each side" },
-  clearanceFloor:       { value: 0.4826, confirmed: true,  note: "19 in — wheel-to-printhead offset at the floor" },
-  clearanceCeiling:     { value: 0.4826, confirmed: true,  note: "19 in — wheel-to-printhead offset at the ceiling" },
+  clearanceLeftRight:   { value: 0.4826, confirmed: true,  note: "19 in â€” wheel-to-printhead offset, each side" },
+  clearanceFloor:       { value: 0.4826, confirmed: true,  note: "19 in â€” wheel-to-printhead offset at the floor" },
+  clearanceCeiling:     { value: 0.4826, confirmed: true,  note: "19 in â€” wheel-to-printhead offset at the ceiling" },
 
-  /* --- NEEDS CONFIRMATION — replace value and set confirmed:true --- */
+  /* --- NEEDS CONFIRMATION â€” replace value and set confirmed:true --- */
   minFloorClearance:    { value: 0.4064, confirmed: false, note: "Lowest usable floor margin in maximum-height mode (16 in assumed)" },
   mastHeight:           { value: 3.00,   confirmed: false, note: "Overall mast/rail height when standing" },
   minPrintHeight:       { value: null,   confirmed: false, note: "Smallest print height the machine can produce" },
@@ -2836,7 +2888,7 @@ const PRICING_CONFIG = {
 };
 
 const VWF_UNITS = { m: 1, cm: 0.01, ft: 0.3048, in: 0.0254 };
-const VWF_EMAIL = "hello@vertikawallprinting.com";
+const VWF_EMAIL = "vertikawallprinting@gmail.com";
 const VWF_TEXTURED = ["Concrete", "Brick", "Tile", "other"];
 
 (function () {
@@ -3266,21 +3318,21 @@ const VWF_TEXTURED = ["Concrete", "Brick", "Tile", "other"];
       el("vwf-fit-status-body").textContent = g.isWall
         ? ((reducedH ? "This ceiling allows " + fmt(g.envH) + " of print height. " : "") +
           (reducedW ? "The printhead needs " + fmt(g.side) + " at each side, leaving " + fmt(g.envW) + " of width. " : "") +
-          "The size used for the estimate is " + fmt(g.printW) + " × " + fmt(g.printH) + ".")
-        : "The requested artwork is larger than the panel area. The size used for the estimate is " + fmt(g.printW) + " × " + fmt(g.printH) + ".";
+          "The size used for the estimate is " + fmt(g.printW) + " Ã— " + fmt(g.printH) + ".")
+        : "The requested artwork is larger than the panel area. The size used for the estimate is " + fmt(g.printW) + " Ã— " + fmt(g.printH) + ".";
     } else {
       el("vwf-fit-status-tag").textContent = "Fits";
       el("vwf-fit-status-title").textContent = "This print fits your " + (g.isWall ? "wall" : "panel") + ".";
       el("vwf-fit-status-body").textContent = g.isWall
-        ? "It sits inside the machine’s reach with " + fmt(g.bottom) + " below the artwork and " + fmt(Math.max(0, g.wallH - g.bottom - g.printH)) + " above it."
+        ? "It sits inside the machineâ€™s reach with " + fmt(g.bottom) + " below the artwork and " + fmt(Math.max(0, g.wallH - g.bottom - g.printH)) + " above it."
         : "The artwork sits within the panel dimensions you entered.";
     }
 
     const sqft = g.area * 10.7639;
-    el("vwf-fit-print-size").textContent = fmt(g.printW) + " × " + fmt(g.printH);
-    el("vwf-fit-price").textContent = sqft.toFixed(2) + " sq ft · base printing " + money(e.base);
+    el("vwf-fit-print-size").textContent = fmt(g.printW) + " Ã— " + fmt(g.printH);
+    el("vwf-fit-price").textContent = sqft.toFixed(2) + " sq ft Â· base printing " + money(e.base);
     rows(el("vwf-fit-facts"), [
-      { k: "Printable area", v: fmt(g.envW) + " × " + fmt(g.envH) },
+      { k: "Printable area", v: fmt(g.envW) + " Ã— " + fmt(g.envH) },
       { k: g.isWall ? "Ceiling entered" : "Area height", v: fmt(g.wallH) },
       { k: g.isWall ? "Side clearance" : "Area width", v: g.isWall ? fmt(g.side) + " each side" : fmt(g.wallW) },
       { k: "Machine max height", v: fmt(PRINTER_CONFIG.maxPrintHeight.value) },
