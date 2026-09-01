@@ -957,6 +957,115 @@ a {
 .work-feature .work-card--portrait .work-mark { background: var(--magenta); }
 
 /* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+  background: #fafaf8;
+  border-top: 1px solid #eceae4;
+  border-bottom: 1px solid #eceae4;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.about-rule {
+  width: 56px;
+  height: 3px;
+  margin-bottom: 22px;
+  background: #bfa071;
+}
+
+.about h2 {
+  margin: 0;
+  max-width: 15ch;
+  color: #23262b;
+  font-size: clamp(32px, 3.6vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+}
+
+.about-copy p {
+  margin: 0;
+  max-width: 62ch;
+  color: #4a4f57;
+  font-size: 17px;
+  line-height: 1.72;
+  text-wrap: pretty;
+}
+
+.about-copy p + p {
+  margin-top: 22px;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 56px;
+}
+
+.about-card {
+  padding: 28px 28px 30px;
+  background: #fff;
+  border: 1px solid #e7e4dd;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-3px);
+  border-color: #d8ccb6;
+  box-shadow: 0 10px 30px rgba(35, 38, 43, .06);
+}
+
+.about-card i {
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-bottom: 20px;
+  background: #bfa071;
+  transition: width .25s ease;
+}
+
+.about-card:hover i {
+  width: 62px;
+}
+
+.about-card h3 {
+  margin: 0 0 12px;
+  color: #23262b;
+  font-size: 19px;
+  letter-spacing: -.01em;
+}
+
+.about-card p {
+  margin: 0;
+  color: #5c6169;
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  .about h2 {
+    max-width: none;
+  }
+}
+
+/* =========================================================
    CTA
 ========================================================= */
 
@@ -2110,6 +2219,7 @@ body.vwf-locked { overflow: hidden; }
       <a href="#applications">Applications</a>
       <a href="#surfaces">Surfaces</a>
       <a href="#work">Our work</a>
+      <a href="#about">About</a>
     </div>
 
     <a class="quote-nav" data-vwf-open href="#quote">
@@ -2443,6 +2553,43 @@ body.vwf-locked { overflow: hidden; }
     </div>
   </section>
 
+  <section class="section about" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-intro">
+          <div class="section-label">About</div>
+          <div class="about-rule" aria-hidden="true"></div>
+          <h2>Driven by Innovation, Defined by Precision</h2>
+        </div>
+
+        <div class="about-copy">
+          <p>At 20 years old, my world exists at the intersection of complex problem-solving and entrepreneurial drive. Balancing double-track studies in both Engineering and Pre-Medical Sciences, I&rsquo;ve built a mindset grounded in rigorous technical accuracy, relentless discipline, and an obsession with how systems work&mdash;from human biology to state-of-the-art mechanical design.</p>
+          <p>Vertika was born out of a desire to bridge high-tech robotics with interior architecture. Where traditional paint and wallpaper fall short with messy installations and design limits, vertical wall printing offers endless possibilities. Drawing on my background in engineering logic and medical-grade attention to detail, I bring a precise, tech-forward standard to every wall we transform&mdash;ensuring crisp, high-definition art that turns blank vertical spaces into striking visual statements.</p>
+        </div>
+      </div>
+
+      <div class="about-cards">
+        <article class="about-card">
+          <i aria-hidden="true"></i>
+          <h3>Engineering Precision</h3>
+          <p>Applying mathematical accuracy and exact calibration for flawless high-resolution prints.</p>
+        </article>
+
+        <article class="about-card">
+          <i aria-hidden="true"></i>
+          <h3>Medical-Grade Detail</h3>
+          <p>Approaching every site assessment, ceiling limitation, and surface texture with meticulous care.</p>
+        </article>
+
+        <article class="about-card">
+          <i aria-hidden="true"></i>
+          <h3>Entrepreneurial Drive</h3>
+          <p>Built on a relentless work ethic and a mission to revolutionize interior design through robotics.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="cta" id="quote">
     <div class="wrap cta-grid">
       <div>
@@ -2457,7 +2604,7 @@ body.vwf-locked { overflow: hidden; }
           <span>Request a quote</span>
           <span class="btn-arrow">&rarr;</span>
         </a>
-        <a class="btn btn-secondary" href="mailto:vertikawallprinting@gmail.com">
+        <a class="btn btn-secondary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=vertikawallprinting%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email Vertika Wall Printing in Gmail">
           <span>Email us directly</span>
           <span class="btn-arrow">&rarr;</span>
         </a>
